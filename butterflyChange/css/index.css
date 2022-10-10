@@ -1,0 +1,16 @@
+/* 字体 */
+@font-face {
+	font-family: 'FiraCode-VF';
+	font-display: swap;
+	src: url('/butterflyChange/fonts/FiraCode-VF.ttf') format("truetype");
+  }
+/* 鼠标 */
+body {
+  cursor: url('/butterflyChange/mouse/regular.cur'),
+	default;
+}
+a,
+img {
+  cursor: url(/butterflyChange/mouse/link.cur),
+	default;
+}
