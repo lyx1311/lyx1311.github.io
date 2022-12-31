@@ -454,9 +454,9 @@
       
         <tags>
             
-            <tag> 后缀自动机 SAM </tag>
-            
             <tag> 动态树 LCT </tag>
+            
+            <tag> 后缀自动机 SAM </tag>
             
         </tags>
       
