@@ -1,0 +1,1488 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>计算机网络-学习笔记 | FUN WORLD</title><meta name="author" content="lyx1311"><meta name="copyright" content="lyx1311"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Chapter 1. Introduction  Internet Network Edge: Hosts (主机) &#x3D; End systems, e.g., phones, PC.  Normally, applications run only in network edge, rather than network core.  Network Core interconnects end">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机网络-学习笔记">
+<meta property="og:url" content="https://blog.lyx1311.top/2025/12/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="FUN WORLD">
+<meta property="og:description" content="Chapter 1. Introduction  Internet Network Edge: Hosts (主机) &#x3D; End systems, e.g., phones, PC.  Normally, applications run only in network edge, rather than network core.  Network Core interconnects end">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.pixabay.com/photo/2022/04/15/06/32/river-7133713_1280.jpg">
+<meta property="article:published_time" content="2025-12-29T07:06:23.000Z">
+<meta property="article:modified_time" content="2025-12-29T07:13:12.334Z">
+<meta property="article:author" content="lyx1311">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.pixabay.com/photo/2022/04/15/06/32/river-7133713_1280.jpg"><link rel="shortcut icon" href="/img/clown.png"><link rel="canonical" href="https://blog.lyx1311.top/2025/12/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '计算机网络-学习笔记',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2025-12-29 15:13:12'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/butterflyChange/css/index.css"><link rel="stylesheet" href="/css/background.css"><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/loading.gif" data-original="/img/clown.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">33</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">36</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.pixabay.com/photo/2022/04/15/06/32/river-7133713_1280.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">FUN WORLD</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">计算机网络-学习笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-12-29T07:06:23.000Z" title="发表于 2025-12-29 15:06:23">2025-12-29</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-12-29T07:13:12.334Z" title="更新于 2025-12-29 15:13:12">2025-12-29</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">6.9k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>40分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="计算机网络-学习笔记"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="chapter-1-introduction"><a class="markdownIt-Anchor" href="#chapter-1-introduction"></a> Chapter 1. Introduction</h1>
+<h2 id="internet"><a class="markdownIt-Anchor" href="#internet"></a> Internet</h2>
+<p><strong>Network Edge</strong>: Hosts (主机) = End systems, e.g., phones, PC.</p>
+<blockquote>
+<p>Normally, applications run only in network edge, rather than network core.</p>
+</blockquote>
+<p><strong>Network Core</strong> interconnects end systems, including:</p>
+<ul>
+<li><strong>Communication Links</strong>: Fiber, Copper, Radio, Satellite. Transmission rate: bandwidth (带宽).</li>
+<li><strong>Packet Switches</strong>: Routers (路由器), Switches (交换机).</li>
+</ul>
+<p><strong>Internet Service Provider</strong> (<strong>ISP</strong>, 互联网服务提供商): e.g., 中国电信, 中国移动.</p>
+<p><strong>Protocols</strong> (协议): HTTP (Web), streaming video, Skype, TCP/IP, WiFi, 4G, Ethernet.</p>
+<ul>
+<li>Internet Standards:
+<ul>
+<li>RFC: Request for Comments</li>
+<li>IETF: Internet Engineering Task Force</li>
+</ul>
+</li>
+</ul>
+<h2 id="layers-protocols"><a class="markdownIt-Anchor" href="#layers-protocols"></a> Layers &amp; Protocols</h2>
+<p><strong>Application</strong>: Supports network applications. e.g., FTP, SMTP, HTTP.</p>
+<p>(Presentation):  允许应用程序解释数据的含义. e.g., Encryption, Compression, Machine-Specific Conventions.</p>
+<p>(Session): 同步、检查点、数据交换恢复.</p>
+<p><strong>Transport</strong>: Provides process-to-process data transfer. e.g., TCP, UDP.</p>
+<p><strong>Network</strong>: Routes datagrams from source to destination. e.g., IP, Routing Protocols.</p>
+<p><strong>Link</strong>: Handles data transfer between neighboring network elements. e.g., Ethernet, 802.111 (WiFi), PPP.</p>
+<p><strong>Physical</strong>: Moves the individual bits within the frame from one node to the next. e.g., cables, switches.</p>
+<h2 id="network-edge"><a class="markdownIt-Anchor" href="#network-edge"></a> Network Edge</h2>
+<p>Includes:</p>
+<ul>
+<li>End systems (Hosts)</li>
+<li>Clients (客户端): desktop, laptop</li>
+<li>Servers: often in data centers</li>
+</ul>
+<p>Two models:</p>
+<ul>
+<li>Client/Server Model</li>
+<li>Peer-Peer Model</li>
+</ul>
+<p><strong>Access Networks</strong> (接入网): The network that physically connects an end system to the first router (edge router).</p>
+<ul>
+<li>Cable Network (有线电视网络): use TV’s. Cable Splitter (分线器, 区分电视信号和网络信号), Cable Modem (调制解调器, 转化为网络信号).</li>
+<li>Digital Subscriber Line (DSL, 数字用户线路): use telephone’s. DSL Splitter, DSL Modem.</li>
+<li>Wireless Access Networks:
+<ul>
+<li>Wireless LANs (无线局域网)</li>
+<li>Wide-area wireless access (广域无线接入)</li>
+</ul>
+</li>
+<li>Enterprise Access Networks: Mix of wired, wireless link technologies, connecting a mix of switches and routers. e.g., Ethernet (以太网), WiFi.</li>
+</ul>
+<p><strong>Physical Media</strong></p>
+<h2 id="network-core"><a class="markdownIt-Anchor" href="#network-core"></a> Network Core</h2>
+<p><strong>Forwarding</strong> &amp; <strong>Routing</strong>:</p>
+<ul>
+<li><strong>Forwarding</strong> (转发): Data Plane. 路由器根据自己的转发表，决定把包扔给哪个端口。</li>
+<li><strong>Routing</strong> (路由): Control Plane. 路由协议在整个网络中收集信息，计算出最佳路径并发送给各个路由器。</li>
+</ul>
+<p><strong>Circuit Switching</strong> (电路交换):</p>
+<ul>
+<li>
+<p>Used by traditional telephone.</p>
+</li>
+<li>
+<p>Mechanism: <strong>Reserve resources</strong>. 预留资源以保证速率。</p>
+<ul>
+<li>Call setup is required to establish an end-to-end link. Resources are reserved for the duration of the communication.</li>
+</ul>
+</li>
+<li>
+<p>Frequency Division Multiplexing (FDM, 频分复用)：把 400 Hz 的通道按频率分为 4 条 100 Hz 的通道，各自在自己的通道上说话。</p>
+<p>Time Division Multiplexing (TDM, 时分复用)：轮流周期性地使用整个通道说话。</p>
+</li>
+</ul>
+<p>电路交换中，如果电路段在某个时刻没有被使用，它将保持空闲，不会分配给其他通信。为处理突发性通信，现代网络多采用分组交换。</p>
+<p><strong>Packet Switching</strong> (分组交换):</p>
+<ul>
+<li>
+<p>Used by Internet.</p>
+</li>
+<li>
+<p>Mechanism: <strong>Not reserve resources</strong>. 资源按需分配。</p>
+<ul>
+<li>Hosts break long messages into <strong>packets</strong>. Packet forwarded independently. 排队存储转发。</li>
+<li><strong>Store-and-forward</strong>: 一个路由器必须完整地收到这一个包，检查无误后，才能把它发给下一个节点。
+<ul>
+<li>Transmission Delay: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mi mathvariant="normal">/</mi><mi>R</mi></mrow><annotation encoding="application/x-tex">L / R</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">L</span><span class="mord">/</span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span></span></span></span>（包的大小 / 链路速度）</li>
+</ul>
+</li>
+<li>Each packet transmitted at full link capacity.</li>
+</ul>
+</li>
+<li>
+<p>Pros:</p>
+<ul>
+<li>Great for bursty data. 突发性数据。</li>
+<li>Resources sharing. 资源共享。</li>
+<li>Simpler, no call setup. 无需建立呼叫。</li>
+</ul>
+</li>
+<li>
+<p>Cons:</p>
+<ul>
+<li>Excessive congestion possible. 可能发生过度拥塞。</li>
+<li>Causes packet delay and packet loss. 导致延迟、丢包。</li>
+<li>Protocols needed for reliable data transfer and congestion control.</li>
+</ul>
+</li>
+</ul>
+<h2 id="performance-metrics"><a class="markdownIt-Anchor" href="#performance-metrics"></a> Performance Metrics</h2>
+<p>Delay, Packet Loss, Throughput</p>
+<h2 id="delay"><a class="markdownIt-Anchor" href="#delay"></a> Delay</h2>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>d</mi><mtext>nodal</mtext></msub><mo>=</mo><msub><mi>d</mi><mtext>proc</mtext></msub><mo>+</mo><msub><mi>d</mi><mtext>queue</mtext></msub><mo>+</mo><msub><mi>d</mi><mtext>trans</mtext></msub><mo>+</mo><msub><mi>d</mi><mtext>prop</mtext></msub></mrow><annotation encoding="application/x-tex">d_{\text{nodal}} = d_{\text{proc}} + d_{\text{queue}} + d_{\text{trans}} + d_{\text{prop}}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">d</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">nodal</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.980548em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathnormal">d</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">proc</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.980548em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathnormal">d</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">queue</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">d</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">trans</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.980548em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathnormal">d</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">prop</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span></span></p>
+<p><strong>Processing Delay</strong> <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mtext>proc</mtext></msub></mrow><annotation encoding="application/x-tex">d_{\text{proc}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.980548em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathnormal">d</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">proc</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span>:</p>
+<ul>
+<li>check bit errors, and determine output link.</li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&lt;</mo></mrow><annotation encoding="application/x-tex">&lt;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mrel">&lt;</span></span></span></span> msec (毫秒).</li>
+</ul>
+<p><strong>Queueing Delay</strong> <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mtext>queue</mtext></msub></mrow><annotation encoding="application/x-tex">d_{\text{queue}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.980548em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathnormal">d</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">queue</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span>:</p>
+<ul>
+<li>time waiting at output link.</li>
+<li>depends on congestion level of router.</li>
+</ul>
+<p><strong>Transmission Delay</strong> <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mtext>trans</mtext></msub></mrow><annotation encoding="application/x-tex">d_{\text{trans}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">d</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">trans</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>:</p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mtext>trans</mtext></msub><mo>=</mo><mi>L</mi><mi mathvariant="normal">/</mi><mi>R</mi></mrow><annotation encoding="application/x-tex">d_{\text{trans}} = L / R</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">d</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">trans</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">L</span><span class="mord">/</span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span></span></span></span>, where <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi></mrow><annotation encoding="application/x-tex">L</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal">L</span></span></span></span> is packet length (bits), and <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi></mrow><annotation encoding="application/x-tex">R</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span></span></span></span> is transmission rate (bps).</li>
+</ul>
+<p><strong>Propagation Delay</strong> <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mtext>prop</mtext></msub></mrow><annotation encoding="application/x-tex">d_{\text{prop}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.980548em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathnormal">d</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">prop</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span>:</p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mtext>prop</mtext></msub><mo>=</mo><mi>d</mi><mi mathvariant="normal">/</mi><mi>s</mi></mrow><annotation encoding="application/x-tex">d_{\text{prop}} = d / s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.980548em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathnormal">d</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">prop</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">d</span><span class="mord">/</span><span class="mord mathnormal">s</span></span></span></span>, where <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi></mrow><annotation encoding="application/x-tex">d</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">d</span></span></span></span> is length of physical link, and <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">s</span></span></span></span> is propagation (传播) speed in medium (<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∼</mo><mn>2</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>8</mn></msup></mrow><annotation encoding="application/x-tex">\sim 2 \times 10^8</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">∼</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">8</span></span></span></span></span></span></span></span></span></span></span> m/sec).</li>
+</ul>
+<p>Sum-up:</p>
+<ul>
+<li>
+<p>只有 Queueing Delay 延迟因数据包而异。</p>
+<p>Let <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">a</span></span></span></span> be the average packet arrival rate (packets per sec):</p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mi>a</mi><mi mathvariant="normal">/</mi><mi>R</mi><mo>→</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">La / R \to 0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">L</span><span class="mord mathnormal">a</span><span class="mord">/</span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>, delay is low;</li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mi>a</mi><mi mathvariant="normal">/</mi><mi>R</mi><mo>→</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">La / R \to 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">L</span><span class="mord mathnormal">a</span><span class="mord">/</span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>, delay is high;</li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mi>a</mi><mi mathvariant="normal">/</mi><mi>R</mi><mo>&gt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">La / R &gt; 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">L</span><span class="mord mathnormal">a</span><span class="mord">/</span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>, delay is unlimited.</li>
+</ul>
+</li>
+</ul>
+<p><strong>End-to-End delay</strong>:</p>
+<ul>
+<li>
+<p>Suppose <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mtext>queue</mtext></msub></mrow><annotation encoding="application/x-tex">d_{\text{queue}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.980548em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathnormal">d</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">queue</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span> is negligible; <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">N - 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> routers between two hosts:</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>d</mi><mtext>end-end</mtext></msub><mo>=</mo><mi>N</mi><mo stretchy="false">(</mo><msub><mi>d</mi><mtext>proc</mtext></msub><mo>+</mo><msub><mi>d</mi><mtext>trans</mtext></msub><mo>+</mo><msub><mi>d</mi><mtext>prop</mtext></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">d_{\text{end-end}} = N(d_{\text{proc}} + d_{\text{trans}} + d_{\text{prop}})
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">d</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">end-end</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.036108em;vertical-align:-0.286108em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">d</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">proc</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">d</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">trans</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.036108em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathnormal">d</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">prop</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></span></p>
+</li>
+</ul>
+<h2 id="packet-loss"><a class="markdownIt-Anchor" href="#packet-loss"></a> Packet Loss</h2>
+<p>Packet arriving to full queue (buffer) will be dropped (lost).</p>
+<h2 id="throughput-吞吐量"><a class="markdownIt-Anchor" href="#throughput-吞吐量"></a> Throughput 吞吐量</h2>
+<p>Rate (bits / time unit) at which bits transferred between sender/receiver.</p>
+<p><strong>Bottleneck Link</strong>: Link with minimum transmission rate (<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi></mrow><annotation encoding="application/x-tex">R</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span></span></span></span>) on end-end path constrains end-end throughput.</p>
+<h2 id="network-security"><a class="markdownIt-Anchor" href="#network-security"></a> Network Security</h2>
+<p><strong>Malware</strong> (恶意软件): Virus (requires user interaction), Worm (no user interaction required).</p>
+<p><strong>Denial of Service</strong> (<strong>DoS</strong>, 拒绝服务): 攻击者通过虚假流量淹没资源，使资源（服务器、带宽）无法用于合法流量</p>
+<p><strong>Packet Sniffing</strong>: 窃听</p>
+<p><strong>IP spoofing</strong>: 用虚假地址发包</p>
+<hr />
+<h1 id="chapter-2-application"><a class="markdownIt-Anchor" href="#chapter-2-application"></a> Chapter 2. Application</h1>
+<p><strong>Sockets</strong> (套接字): Interface between process and computer networks.</p>
+<p><strong>IP</strong> and <strong>Port Number</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>TCP</th>
+<th>UDP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Connection</td>
+<td>Connection-oriented</td>
+<td>Connectionless</td>
+</tr>
+<tr>
+<td>Data Transfer Reliability</td>
+<td>Reliable transport: without error, in proper order, no duplicate bytes</td>
+<td>Unreliable data transfer</td>
+</tr>
+<tr>
+<td>Congestion Control</td>
+<td>Throttles (限制) sender when network overloaded</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p>They do not provide Timing, Minimum Throughput Guarantee, Security.</p>
+<p>UDP is commonly used in time-sensitive communications where occasionally dropping packets is better than waiting.</p>
+<h2 id="web-http"><a class="markdownIt-Anchor" href="#web-http"></a> Web &amp; HTTP</h2>
+<p><strong>Round-Trip Time</strong> (<strong>RTT</strong>): Time for a small packet to travel from client to server and back.</p>
+<p><strong>Hypertext Transfer Protocol</strong> (<strong>HTTP</strong>):</p>
+<ul>
+<li>
+<p>Client/Server model using <strong>TCP</strong>.</p>
+</li>
+<li>
+<p><strong>Stateless</strong>: Server maintains no information about past client requests.</p>
+</li>
+<li>
+<p>Connections:</p>
+<ul>
+<li><strong>Non-persistent HTTP</strong> (<strong>HTTP/1.0</strong>): At most one object sent over TCP connection. Requires 2 RTTs per object (1 for handshaking, 1 for request and response).</li>
+<li><strong>Persistent HTTP</strong> (<strong>HTTP/1.1</strong>): Multiple objects can be sent over single TCP connection.</li>
+</ul>
+</li>
+<li>
+<p><strong>Request Message Format</strong>:</p>
+<img src="/img/loading.gif" data-original="/img/计算机网络 HTTP Request Message.jpg" style="zoom:40%;" />
+<ul>
+<li><code>GET</code>: Request object.</li>
+<li><code>POST</code>: Input is uploaded in entity body (e.g., form submission).</li>
+<li><code>HEAD</code>: Asks server to leave requested object out of response (for testing).</li>
+<li><code>PUT</code>: (HTTP/1.1) Uploads file in entity body to path specified in URL field.</li>
+<li><code>DELETE</code>: (HTTP/1.1) Deletes file specified in the URL field.</li>
+</ul>
+</li>
+<li>
+<p><strong>Response Message Format</strong>:</p>
+<img src="/img/loading.gif" data-original="/img/计算机网络 HTTP Response Message.jpg" style="zoom:40%;" />
+<ul>
+<li><code>200 OK</code>: Request succeeded, requested object later in this msg.</li>
+<li><code>301 Moved Permanently</code>: Requested object moved, new location specified later in this msg.</li>
+<li><code>400 Bad Request</code>: Server couldn’t understand msg.</li>
+<li><code>404 Not Found</code>: Requested document not found on this server.</li>
+<li><code>505 HTTP Version Not Supported</code>.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Cookies</strong>:</p>
+<ul>
+<li>Solve the problem of HTTP being stateless.</li>
+<li><strong>4 Components</strong>:
+<ol>
+<li>Cookie header line of HTTP response message (<code>Set-Cookie:</code>).</li>
+<li>Cookie header line in next HTTP request message (<code>Cookie:</code>).</li>
+<li>Cookie file kept on the user’s host, managed by the browser.</li>
+<li>Back-end database at the Web server.</li>
+</ol>
+</li>
+<li><strong>Workflow:</strong> Server sends <code>Set-cookie: 1678</code> -&gt; Client stores it -&gt; Client sends <code>Cookie: 1678</code> in later requests.</li>
+</ul>
+<p><strong>Web Caching</strong> (<strong>Proxy Server</strong>):</p>
+<ul>
+<li>Goal: Don’t send object if cache has up-to-date cached version.</li>
+<li><strong>Conditional GET</strong>: Cache sends a GET request with an <code>If-Modified-Since: &lt;date&gt;</code> header. If the object has not been modified, the origin server returns <code>304 Not Modified</code> with an empty body.</li>
+</ul>
+<h2 id="electronic-mail"><a class="markdownIt-Anchor" href="#electronic-mail"></a> Electronic Mail</h2>
+<p><strong>3 Major Components</strong>:</p>
+<ul>
+<li>
+<p><strong>User Agents</strong>: “Mail reader” software like Outlook, etc.</p>
+</li>
+<li>
+<p><strong>Mail Servers</strong>: An always-on server, including <strong>Mailbox</strong> and <strong>Message Queue</strong>.</p>
+</li>
+<li>
+<p><strong>Simple Mail Transfer Protocol</strong> (<strong>SMTP</strong>): Uses <strong>TCP</strong> to reliably transfer email from client to server on <strong>port 25</strong>.</p>
+<p>It’s a <strong>push</strong> protocol; it cannot be used to pull mail!!!</p>
+<p>Sending server connects <strong>directly</strong> to receiving server.</p>
+<ul>
+<li>
+<p><strong>Format</strong>:</p>
+<img src="/img/loading.gif" data-original="/img/计算机网络 SMTP Interaction.jpg" style="zoom:40%;" />
+<ul>
+<li><strong>Handshaking:</strong> Greeting (e.g., <code>HELO</code>, <code>220</code>).</li>
+<li><strong>Transfer of messages:</strong> Sending the actual content.</li>
+<li><strong>Closure:</strong> Ending the connection (<code>QUIT</code>).</li>
+</ul>
+</li>
+<li>
+<p>The entire msg must be in 7-bit ASCII.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Mail Access Protocols</strong>:</p>
+<ul>
+<li>
+<p><strong>Post Office Protocol 3</strong> (<strong>POP3</strong>):</p>
+<ul>
+<li>Authorizes user and downloads all messages.</li>
+<li>“<strong>Download and delete</strong>” mode is the default (deletes messages from the server). “Download and keep” is another option.</li>
+<li><strong>Stateless</strong>: Does not keep track of user state (e.g., read/unread) across sessions.</li>
+</ul>
+</li>
+<li>
+<p><strong>Internet Mail Access Protocol</strong> (<strong>IMAP</strong>):</p>
+<ul>
+<li>Keeps all messages and allows users to organize messages in folders on the server.</li>
+<li><strong>Stateful</strong>: Synchronizes state (read/replied) across all devices.</li>
+</ul>
+</li>
+<li>
+<p><strong>HTTP</strong>: Used by web-based email clients (Gmail, Hotmail). The user agent is a web browser.</p>
+</li>
+</ul>
+<h2 id="domain-name-system-dns"><a class="markdownIt-Anchor" href="#domain-name-system-dns"></a> Domain Name System (DNS)</h2>
+<p><strong>DNS</strong>:</p>
+<ul>
+<li>Function: Translates hostnames to IP addresses. Runs on <strong>UDP port 53</strong>.</li>
+<li>Architecture: A <strong>distributed</strong>, <strong>hierarchical</strong> (分层的) database.
+<ul>
+<li><strong>Why not centralized?</strong> Single point of failure, traffic volume, distant database, maintenance nightmare. It doesn’t scale (扩展).</li>
+</ul>
+</li>
+<li>Hierarchy:
+<ul>
+<li><strong>Root Name Servers</strong>.</li>
+<li><strong>TLD</strong> (Top-Level Domain) <strong>Servers</strong>: <code>.com</code>, <code>.org</code>, <code>.edu</code>, etc.</li>
+<li><strong>Authoritative DNS Servers</strong>: Hold the actual <code>hostname</code> to <code>IP</code> mapping records for an organization’s servers.</li>
+</ul>
+</li>
+<li><strong>Local DNS Server</strong>: Not strictly part of hierarchy, provided by ISP. Acts as a <strong>proxy</strong> (caches).</li>
+<li>Resolution Process:
+<ul>
+<li><strong>Iterated Query</strong> (非递归查询): The contacted server replies with the name of the next server to contact (“I don’t know, but ask that guy”).</li>
+<li><strong>Recursive Query</strong> (递归查询): Puts the burden of name resolution on the contacted server (“Find this answer for me”).</li>
+</ul>
+</li>
+</ul>
+<p><strong>Records</strong> &amp; <strong>Caching</strong>:</p>
+<ul>
+<li>Format: <code>(name, value, type, ttl)</code>.</li>
+<li>Common Types:
+<ul>
+<li><strong>A</strong>: <code>name</code> = hostname, <code>value</code> = <strong>IP address</strong>.</li>
+<li><strong>NS</strong>: <code>name</code> = domain, <code>value</code> = hostname of <strong>Authoritative DNS Server</strong> (points to who knows the answer). e.g., <code>(foo.com, dns.foo.com)</code>. Also a Type=A record is needed, providing the IP address of the Authoritative DNS Server.</li>
+<li><strong>CNAME</strong>: <code>name</code> = alias, <code>value</code> = <strong>canonical name</strong> (real name). e.g., <code>(www.ibm.com, servereast.backup2.ibm.com)</code>.</li>
+<li><strong>MX</strong>: <code>value</code> = name of <strong>mail server</strong>. e.g., <code>(@gmail.com, mail.google.com)</code>.</li>
+</ul>
+</li>
+<li>Caching: Once a server learns a mapping, it caches it. Entries disappear after <strong>TTL</strong> (Time To Live) expires.</li>
+</ul>
+<p><strong>Registration</strong> &amp; <strong>Security</strong>:</p>
+<ul>
+<li><strong>Inserting Records</strong>: You need to provide names and IPs of your authoritative name server. <strong>DNS Registrar</strong> inserts Type=NS and Type=A records into the TLD server.</li>
+<li><strong>DDoS</strong>: Bombard root / TLD servers with traffic.</li>
+<li><strong>Redirect Attacks</strong> (<strong>Man-in-middle</strong> / <strong>Poisoning</strong>): Intercept queries or send bogus replies to redirect users to fake sites.</li>
+</ul>
+<h2 id="peer-to-peer-p2p-applications"><a class="markdownIt-Anchor" href="#peer-to-peer-p2p-applications"></a> Peer-to-Peer (P2P) Applications</h2>
+<p><strong>Architecture</strong>:</p>
+<ul>
+<li>No always-on, central server. Arbitrary end systems (<strong>peers</strong>) communicate directly.</li>
+<li><strong>Self-scalability</strong> (自扩展性): New peers bring new service capacity.</li>
+<li>Challenges: Intermittent connected, dynamic IP addresses.</li>
+<li>Pros: Time is significantly less than Client/Server model for large N.</li>
+</ul>
+<p><strong>BitTorrent</strong>:</p>
+<ul>
+<li><strong>Chunks</strong>: File divided into 256Kb chunks.</li>
+<li><strong>Tit-for-tat</strong> (以牙还牙): You send chunks to peers who are sending chunks to you at highest rate (Top 4). Others are “choked”.</li>
+<li><strong>Optimistic Unchoking</strong> (乐观疏通): Randomly select a peer to send chunks to, hoping they become a top uploader.</li>
+</ul>
+<h2 id="video-streaming"><a class="markdownIt-Anchor" href="#video-streaming"></a> Video Streaming</h2>
+<p><strong>Dynamic Adaptive Streaming over HTTP</strong> (<strong>DASH</strong>):</p>
+<ul>
+<li>Server: Divides video file into <strong>chunks</strong> encoded at different rates (quality levels, 高清, 标清, 流畅…).
+<ul>
+<li><strong>Manifest File</strong>: provides URLs for different chunks encoded at<br />
+different rates.</li>
+</ul>
+</li>
+<li>Client: Periodically measures server-to-client bandwidth and requests chunks one by one. Adaptive to network conditions.</li>
+</ul>
+<h2 id="content-distribution-networks-cdns"><a class="markdownIt-Anchor" href="#content-distribution-networks-cdns"></a> Content Distribution Networks (CDNs)</h2>
+<p><strong>CDN</strong>: Store copies of content at multiple sites.</p>
+<ul>
+<li>Subscriber requests content from CDN.
+<ul>
+<li>Directed to nearby copy, retrieves content.</li>
+<li>May choose different copy if network path congested.</li>
+</ul>
+</li>
+<li>Deployment Strategy:
+<ul>
+<li><strong>Enter Deep</strong> (深入部署): Deploy server clusters deep into access ISPs (close to users).</li>
+<li><strong>Bring Home</strong> (本地部署): Deploy servers in IXPs (less maintenance).</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h1 id="chapter-3-transport"><a class="markdownIt-Anchor" href="#chapter-3-transport"></a> Chapter 3. Transport</h1>
+<p>Network Layer: Logical communication between hosts.</p>
+<p>Transport Layer: Logical communication between processes.</p>
+<ul>
+<li>Relies on, enhances, network layer services.</li>
+</ul>
+<h2 id="socket-programming"><a class="markdownIt-Anchor" href="#socket-programming"></a> Socket Programming</h2>
+<p><strong>Socket</strong>: The “door” between the <strong>application process</strong> and the <strong>end-to-end transport protocol</strong> (TCP or UDP).</p>
+<p><strong>Socket Programming with UDP</strong>:</p>
+<ul>
+<li>Type: <code>SOCK_DGRAM</code> (Datagram).</li>
+<li>Characteristics:
+<ul>
+<li><strong>Connectionless</strong>: No “handshaking” before sending data.</li>
+<li><strong>Unreliable</strong>: Data may be lost or arrive out-of-order.</li>
+</ul>
+</li>
+<li>Socket Identification: A UDP socket is identified by a 2-tuple: (<strong>Dest IP</strong>, <strong>Dest Port</strong>).</li>
+<li>Key Functions (Python):
+<ul>
+<li><code>socket(AF_INET, SOCK_DGRAM)</code>: Create a UDP socket.</li>
+<li><code>sendto(message, (IP, Port))</code>: Send data (must attach address).</li>
+<li><code>recvfrom(2048)</code>: Receive data and get sender’s address.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Socket Programming with TCP</strong>:</p>
+<ul>
+<li>
+<p>Type: <code>SOCK_STREAM</code>.</p>
+</li>
+<li>
+<p>Characteristics:</p>
+<ul>
+<li><strong>Connection-oriented:</strong> Requires a <strong>3-way handshake</strong> before data exchange.</li>
+<li><strong>Reliable</strong>: Delivers a “byte stream” (like a pipe).</li>
+</ul>
+</li>
+<li>
+<p>Socket Identification: A TCP socket is identified by a 4-tuple: (<strong>Source IP, Source Port, Dest IP, Dest Port</strong>).</p>
+</li>
+<li>
+<p>The “Two-Socket” Rule for Server:</p>
+<ol>
+<li><strong>Welcoming Socket</strong>: Listens for incoming connection requests (e.g., the front desk).</li>
+<li><strong>Connection Socket</strong>: A new socket created for each specific client after <code>accept()</code>.</li>
+</ol>
+<img src="/img/loading.gif" data-original="/img/计算机网络 Socket Programming with TCP.jpg" style="zoom:40%;" />
+</li>
+</ul>
+<h2 id="multiplexing-demultiplexing"><a class="markdownIt-Anchor" href="#multiplexing-demultiplexing"></a> Multiplexing &amp; Demultiplexing</h2>
+<p><strong>Multiplexing</strong> (at sender): Gathering data from multiple sockets, enveloping data with header (later used for demultiplexing).</p>
+<p><strong>Demultiplexing</strong> (at receiver): Delivering received segments to the correct socket using header information.</p>
+<ul>
+<li><strong>Connectionless Demux</strong> (UDP): same Dest Port -&gt; same socket.</li>
+<li><strong>Connection-oriented Demux</strong> (TCP): same Source &amp; same Dest -&gt; same socket.
+<ul>
+<li><strong>Threaded Server:</strong> Modern servers create a new <strong>thread</strong> for each connection socket to handle multiple clients simultaneously.</li>
+</ul>
+</li>
+</ul>
+<h2 id="user-datagram-protocol-udp"><a class="markdownIt-Anchor" href="#user-datagram-protocol-udp"></a> User Datagram Protocol (UDP)</h2>
+<p><strong>Format</strong>:</p>
+<img src="/img/loading.gif" data-original="/img/计算机网络 UDP Segment.jpg" style="zoom:40%;" />
+<p><strong>Checksum</strong>: 16 位回卷加法</p>
+<ul>
+<li>Treat segment contents (including header and pseudo-header) as a sequence of <strong>16-bit integers</strong>.</li>
+<li>Sum them up (using <strong>1’s complement sum</strong>).</li>
+<li><strong>Wrap-around</strong>: Any carry-out from the most significant bit is added to the result.</li>
+<li>Take the 1’s complement (flip all 0s to 1s and 1s to 0s) to get the checksum.</li>
+<li>Check: If the result is <strong>all 1s</strong>, no error detected.</li>
+</ul>
+<p><strong>Applications</strong>:</p>
+<ul>
+<li><strong>DNS</strong>: Needs speed, tiny messages.</li>
+<li><strong>Streaming Multimedia</strong>: Loss tolerant (it’s okay to miss a video frame), rate sensitive.</li>
+<li><strong>SNMP</strong>: Network management protocol.</li>
+</ul>
+<h2 id="reliable-data-transfer-rdt"><a class="markdownIt-Anchor" href="#reliable-data-transfer-rdt"></a> Reliable Data Transfer (RDT)</h2>
+<p><strong>RDT 1.0</strong>: Reliable Channel.</p>
+<ul>
+<li>No control messages needed.</li>
+</ul>
+<p><strong>RDT 2.x</strong>: Channel with Bit Errors.</p>
+<ul>
+<li>
+<p><strong>RDT 2.0</strong>:</p>
+<ul>
+<li><strong>Checksum</strong>: To detect errors.</li>
+<li><strong>ACK</strong> (Acknowledgement): Receiver tells sender “OK”.</li>
+<li><strong>NAK</strong> (Negative ACK): Receiver tells sender “Error, please repeat”.</li>
+<li><strong>Retransmission</strong>: Sender resends the packet upon NAK.</li>
+</ul>
+</li>
+<li>
+<p><strong>RDT 2.1</strong> (序列号): What if ACK/NAK is corrupted? Sender adds <strong>Sequence Numbers</strong> (0, 1) to each packet to handle duplicates.</p>
+</li>
+<li>
+<p><strong>RDT 2.2</strong> (无 NAK): Instead of NAK, the receiver sends an ACK for the <strong>last correctly received packet</strong>. A duplicate ACK at the sender acts like a NAK.</p>
+</li>
+</ul>
+<p><strong>RDT 3.0</strong>: Channel with Errors and Loss.</p>
+<ul>
+<li><strong>Countdown Timer</strong>: If no ACK arrives within the limit (<strong>Timeout</strong>), then retransmit the packet.</li>
+<li><strong>Stop-and-Wait:</strong> Sender waits for one packet to be acknowledged before sending the next.</li>
+<li>Performance: <strong>Utilization Rate</strong> (利用率): <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>U</mi><mtext>sender</mtext></msub><mo>=</mo><mfrac><mrow><mi>L</mi><mi mathvariant="normal">/</mi><mi>R</mi></mrow><mrow><mtext>RTT</mtext><mo>+</mo><mi>L</mi><mi mathvariant="normal">/</mi><mi>R</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">U_{\text{sender}} = \frac{L / R}{\text{RTT} + L / R}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">U</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">sender</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.53em;vertical-align:-0.52em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.01em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">RTT</span></span><span class="mbin mtight">+</span><span class="mord mathnormal mtight">L</span><span class="mord mtight">/</span><span class="mord mathnormal mtight" style="margin-right:0.00773em;">R</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.485em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">L</span><span class="mord mtight">/</span><span class="mord mathnormal mtight" style="margin-right:0.00773em;">R</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.52em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span>.</li>
+</ul>
+<p><strong>Pipelining</strong> (流水线): Allowing the sender to send multiple, <strong>“in-flight”</strong> packets without waiting for ACKs.</p>
+<ul>
+<li>Requirments:
+<ul>
+<li>Increased range of <strong>Sequence Numbers</strong>.</li>
+<li><strong>Buffering</strong> at sender and/or receiver.</li>
+</ul>
+</li>
+<li><strong>Go-Back-N</strong> (GBN): 一人犯错，全组重来
+<ul>
+<li><strong>Sender Window</strong>: A range of <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span> consecutive unacknowledged sequence numbers.</li>
+<li><strong>Cumulative ACK</strong>: ACK(<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span></span></span></span>) means all packets up to and including <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span></span></span></span> have been correctly received.</li>
+<li><strong>Sender Timer:</strong> A single timer for the <strong>oldest transmitted but not yet ACKed</strong> packet. On timeout, the sender <strong>resends all packets</strong> in the current window (starting from the lost one).</li>
+<li><strong>Receiver</strong>:
+<ul>
+<li>Only sends ACKs for correctly received, in-order packets.</li>
+<li><strong>No Buffering:</strong> Discards out-of-order packets.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Selective Repeat</strong> (SR): 精准打击，谁丢补谁
+<ul>
+<li><strong>Individual ACK</strong>: Receiver confirms each packet individually.</li>
+<li><strong>Sender Timers</strong>: Maintains a separate timer for <strong>each</strong> unACKed packet. Sender only resends the specific packet that timed out.</li>
+<li><strong>Receiver Buffering</strong>: Receiver keeps out-of-order packets in a buffer for later assembly.</li>
+<li>Rule: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>Sequence Number Space</mtext><mo>≥</mo><mn>2</mn><mo>⋅</mo><mtext>Window Size</mtext></mrow><annotation encoding="application/x-tex">\text{Sequence Number Space} \ge 2 \cdot \text{Window Size}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord text"><span class="mord">Sequence Number Space</span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≥</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord text"><span class="mord">Window Size</span></span></span></span></span>.</li>
+</ul>
+</li>
+</ul>
+<h2 id="transmission-control-protocol-tcp"><a class="markdownIt-Anchor" href="#transmission-control-protocol-tcp"></a> Transmission Control Protocol (TCP)</h2>
+<p><strong>Format</strong>:</p>
+<img src="/img/loading.gif" data-original="/img/计算机网络 TCP Segment.jpg" style="zoom:40%;" />
+<ul>
+<li><strong>Sequence Numbers</strong> (Seq #): Byte stream “number” of the <strong>first data byte</strong> in the segment.</li>
+<li><strong>Acknowledgement Numbers</strong> (Ack #): Seq # of the <strong>next byte expected</strong> from the other side (Cumulative ACK).</li>
+<li><strong>Flags</strong> (<strong>UAPRSF</strong>):
+<ul>
+<li><strong>ACK</strong>: Ack # is valid.</li>
+<li><strong>SYN/FIN</strong>: Used for connection setup/teardown.</li>
+<li><strong>RST</strong>: Reset connection.</li>
+<li><strong>PSH/URG</strong>: Push/Urgent (rarely used).</li>
+</ul>
+</li>
+<li><strong>Receive Window</strong>: Number of bytes the receiver is willing to accept (for Flow Control).</li>
+</ul>
+<p><strong>RTT Estimation</strong>:</p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>EstimatedRTT</mtext><mo>=</mo><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><mi>α</mi><mo stretchy="false">)</mo><mo>⋅</mo><mtext>EstimatedRTT</mtext><mo>+</mo><mi>α</mi><mo>⋅</mo><mtext>SampleRTT</mtext></mrow><annotation encoding="application/x-tex">\text{EstimatedRTT} = (1 - \alpha) \cdot \text{EstimatedRTT} + \alpha \cdot \text{SampleRTT}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord text"><span class="mord">EstimatedRTT</span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.0037em;">α</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.77777em;vertical-align:-0.08333em;"></span><span class="mord text"><span class="mord">EstimatedRTT</span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.44445em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.0037em;">α</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord text"><span class="mord">SampleRTT</span></span></span></span></span>. (typically <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>=</mo><mn>0.125</mn></mrow><annotation encoding="application/x-tex">\alpha = 0.125</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.0037em;">α</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mord">.</span><span class="mord">1</span><span class="mord">2</span><span class="mord">5</span></span></span></span>)</li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>DevRTT</mtext><mo>=</mo><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><mi>β</mi><mo stretchy="false">)</mo><mo>⋅</mo><mtext>DevRTT</mtext><mo>+</mo><mi>β</mi><mo>⋅</mo><mi mathvariant="normal">∣</mi><mtext>SampleRTT</mtext><mo>−</mo><mtext>EstimatedRTT</mtext><mi mathvariant="normal">∣</mi></mrow><annotation encoding="application/x-tex">\text{DevRTT} = (1 - \beta) \cdot \text{DevRTT} + \beta \cdot |\text{SampleRTT} - \text{EstimatedRTT}|</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord text"><span class="mord">DevRTT</span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.05278em;">β</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord text"><span class="mord">DevRTT</span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.05278em;">β</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">∣</span><span class="mord text"><span class="mord">SampleRTT</span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">EstimatedRTT</span></span><span class="mord">∣</span></span></span></span>. (typically, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>β</mi><mo>=</mo><mn>0.25</mn></mrow><annotation encoding="application/x-tex">\beta = 0.25</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.05278em;">β</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mord">.</span><span class="mord">2</span><span class="mord">5</span></span></span></span>)</li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>TimeoutInterval</mtext><mo>=</mo><mtext>EstimatedRTT</mtext><mo>+</mo><mn>4</mn><mo>⋅</mo><mtext>DevRTT</mtext></mrow><annotation encoding="application/x-tex">\text{TimeoutInterval} = \text{EstimatedRTT} + 4 \cdot \text{DevRTT}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord text"><span class="mord">TimeoutInterval</span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.77777em;vertical-align:-0.08333em;"></span><span class="mord text"><span class="mord">EstimatedRTT</span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord text"><span class="mord">DevRTT</span></span></span></span></span>​.</li>
+</ul>
+<p><strong>RDT</strong>:</p>
+<ul>
+<li>
+<p><strong>Retransmissions</strong> triggered by: timeout events / duplicate ACKs.</p>
+</li>
+<li>
+<p><strong>Fast Retransmit</strong>: If sender receives <strong>3 duplicate ACKs</strong> for the same data (total 4 ACKs), it resends the unacked segment with the smallest Seq # <strong>before</strong> the timer expires.</p>
+</li>
+<li>
+<p><strong>Flow Control</strong>:</p>
+<ul>
+<li><strong>Receive Window</strong> (<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>rwnd</mtext></mrow><annotation encoding="application/x-tex">\text{rwnd}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord text"><span class="mord">rwnd</span></span></span></span></span>): Prevent sender from overflowing the receiver’s buffer.</li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>rwnd</mtext><mo>=</mo><mtext>RcvBuffer−</mtext><mo stretchy="false">[</mo><mtext>LastByteRcvd−LastByteRead</mtext><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">\text{rwnd} = \text{RcvBuffer} −[\text{LastByteRcvd} − \text{LastByteRead}]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord text"><span class="mord">rwnd</span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">RcvBuffer</span></span><span class="mord">−</span><span class="mopen">[</span><span class="mord text"><span class="mord">LastByteRcvd</span></span><span class="mord">−</span><span class="mord text"><span class="mord">LastByteRead</span></span><span class="mclose">]</span></span></span></span>​.</li>
+<li>Sender guarantees <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>LastByteSent−LastByteAcked</mtext><mo>≤</mo><mtext>rwnd</mtext></mrow><annotation encoding="application/x-tex">\text{LastByteSent} − \text{LastByteAcked} \le 
+\text{rwnd}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord text"><span class="mord">LastByteSent</span></span><span class="mord">−</span><span class="mord text"><span class="mord">LastByteAcked</span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord text"><span class="mord">rwnd</span></span></span></span></span>​.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Connection Management</strong>:</p>
+<ul>
+<li>
+<p><strong>3-Way Handshake</strong> (Establishment):</p>
+<img src="/img/loading.gif" data-original="/img/计算机网络 TCP 3-Way Handshake.jpg" style="zoom:40%;" />
+</li>
+<li>
+<p><strong>4-Way Handshake</strong> (Closing):</p>
+<img src="/img/loading.gif" data-original="/img/计算机网络 TCP 4-Way Handshake.jpg" style="zoom:40%;" />
+</li>
+<li>
+<p><strong>RST</strong>: Sent when a host receives a segment that <strong>does not match</strong> any existing socket.</p>
+</li>
+</ul>
+<p><strong>Congestion Control</strong>:</p>
+<ul>
+<li>
+<p><strong>Additive Increase Multiplicative Decrease</strong>:</p>
+<ul>
+<li>Increase <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>cwnd</mtext></mrow><annotation encoding="application/x-tex">\text{cwnd}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord text"><span class="mord">cwnd</span></span></span></span></span> by <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> MSS every RTT until loss is detected.</li>
+<li>Cut <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>cwnd</mtext></mrow><annotation encoding="application/x-tex">\text{cwnd}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord text"><span class="mord">cwnd</span></span></span></span></span> in half after a non-timeout loss (3 duplicate ACKs).</li>
+</ul>
+</li>
+<li>
+<p><strong>3 Major Components</strong>:</p>
+<ul>
+<li><strong>Slow Start</strong>: Start with <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>cwnd</mtext><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\text{cwnd} = 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord text"><span class="mord">cwnd</span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> MSS. Double <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>cwnd</mtext></mrow><annotation encoding="application/x-tex">\text{cwnd}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord text"><span class="mord">cwnd</span></span></span></span></span> every RTT.</li>
+<li><strong>Congestion Avoidance</strong>: When <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>cwnd</mtext><mo>≥</mo><mtext>ssthresh</mtext></mrow><annotation encoding="application/x-tex">\text{cwnd} \ge \text{ssthresh}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83041em;vertical-align:-0.13597em;"></span><span class="mord text"><span class="mord">cwnd</span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≥</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord text"><span class="mord">ssthresh</span></span></span></span></span>, increase <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>cwnd</mtext></mrow><annotation encoding="application/x-tex">\text{cwnd}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord text"><span class="mord">cwnd</span></span></span></span></span> by 1 MSS per RTT.</li>
+<li><strong>Fast Recovery</strong>: When 3 duplicate ACKs received, TCP stays in a higher sending rate without dropping to 1 MSS.
+<ul>
+<li><strong>TCP Tahoe</strong>: Whether timeout or 3 duplicate ACKs, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>cwnd</mtext><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\text{cwnd} = 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord text"><span class="mord">cwnd</span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> MSS, enters <strong>Slow Start</strong>.</li>
+<li><strong>TCP Reno</strong>: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>ssthresh</mtext><mo>=</mo><mtext>cwnd</mtext><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">\text{ssthresh} = \text{cwnd}/2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord text"><span class="mord">ssthresh</span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">cwnd</span></span><span class="mord">/</span><span class="mord">2</span></span></span></span>, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>cwnd</mtext><mo>=</mo><mtext>ssthresh</mtext><mo>+</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">\text{cwnd} = \text{ssthresh} + 3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord text"><span class="mord">cwnd</span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.77777em;vertical-align:-0.08333em;"></span><span class="mord text"><span class="mord">ssthresh</span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span>​ MSS, enters <strong>Fast Recovery</strong> (then Congestion Avoidance).</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Average Throughput</strong>:</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mn>3</mn><mn>4</mn></mfrac><mo>⋅</mo><mfrac><mi>W</mi><mtext>RTT</mtext></mfrac><mtext> bytes/sec</mtext></mrow><annotation encoding="application/x-tex">\frac{3}{4} \cdot \frac{W}{\text{RTT}} \text{ bytes/sec}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.00744em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.32144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">4</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">3</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:2.04633em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.36033em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord text"><span class="mord">RTT</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">W</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mord text"><span class="mord"> bytes/sec</span></span></span></span></span></span></p>
+<p>where <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>W</mi></mrow><annotation encoding="application/x-tex">W</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">W</span></span></span></span>​ is the windows size (in bytes) where loss occurs.</p>
+<ul>
+<li><strong>Long, Fat Pipes Problem</strong>: Traditional TCP performs poorly on very high-speed networks because even a tiny drop causes the window to halve.</li>
+</ul>
+</li>
+<li>
+<p><strong>Fairness</strong>: Fair. 趋于平分带宽。</p>
+</li>
+<li>
+<p><strong>Explicit Congestion Notification</strong> (<strong>ECN</strong>, 显式拥塞通知): Routers can set 2 bits in the IP header to <strong>explicitly</strong> tell the sender “the network is getting congested” before packets are actually dropped.</p>
+</li>
+</ul>
+<hr />
+<h1 id="chapter-4-network"><a class="markdownIt-Anchor" href="#chapter-4-network"></a> Chapter 4. Network</h1>
+<p><strong>Data Plane</strong>:</p>
+<ul>
+<li><strong>Local</strong> function within each router.</li>
+<li>Determines how a datagram arrives on an input port and is moved to an output port.</li>
+<li>Implemented in <strong>Hardware</strong>.</li>
+</ul>
+<p><strong>Control Plane</strong>:</p>
+<ul>
+<li><strong>Network-wide</strong> logic.</li>
+<li>Determines how a datagram is routed along the end-to-end path.</li>
+<li>Implemented in <strong>Software</strong>.</li>
+</ul>
+<p><strong>Two Approaches to Control Plane</strong>:</p>
+<ul>
+<li><strong>Traditional</strong>: Each router has its own routing algorithm that talks to others.</li>
+<li><strong>Software-Defined Networking</strong> (<strong>SDN</strong>): A remote <strong>Centralized Controller</strong> tells each router what to do.</li>
+</ul>
+<p><strong>Network Service Model</strong>: No guarantees. “<strong>Best Effort</strong>”.</p>
+<h2 id="router"><a class="markdownIt-Anchor" href="#router"></a> Router</h2>
+<img src="/img/loading.gif" data-original="/img/计算机网络 Router Architecture.jpg" style="zoom:40%;" />
+<p><strong>2 Major Components</strong>:</p>
+<ul>
+<li><strong>Routing Processor</strong> (Control Plane): Software-based, operates in <strong>ms</strong> timeframe. Handles routing protocols (RIP, OSPF, BGP).</li>
+<li><strong>Switching Fabric &amp; Ports</strong> (Data Plane): Hardware-based, operates in <strong>ns</strong> timeframe. Handles forwarding.</li>
+</ul>
+<p><strong>Input Ports</strong>:</p>
+<ul>
+<li><strong>Decentralized Switching</strong>: Each input port has a <strong>copy</strong> of the forwarding table to avoid a central bottleneck. “<strong>match plus action</strong>”</li>
+<li><strong>Longest Prefix Matching</strong> (<strong>LPM</strong>): When searching the table, use the <strong>longest</strong> address prefix that matches the destination. 匹配多个范围，选描述最精确（最长）的。</li>
+</ul>
+<p><strong>Switching Fabrics</strong>:</p>
+<img src="/img/loading.gif" data-original="/img/计算机网络 Router Switching Facrics.jpg" style="zoom:30%;" />
+<p><strong>Output Ports</strong>:</p>
+<ul>
+<li><strong>Buffering</strong>: Required when datagrams arrive from fabric faster than the output line rate. <strong>Packet Loss</strong> occurs when the buffer (queue) overflows.</li>
+<li><strong>Scheduling</strong>: Deciding which packet to send next.
+<ul>
+<li><strong>FIFO</strong>: First-in, first-out. (Simple)</li>
+<li><strong>Priority</strong>: Send the highest priority packet first (e.g., voice over email).</li>
+<li><strong>Round Robin</strong> (<strong>RR</strong>): Cyclically scan class queues, one from each class.</li>
+<li><strong>Weighted Fair Queuing</strong> (<strong>WFQ</strong>): Each class gets a weighted amount of service (e.g., Class A gets 60%, Class B gets 40% of bandwidth).</li>
+</ul>
+</li>
+</ul>
+<h2 id="internet-protocol-ip"><a class="markdownIt-Anchor" href="#internet-protocol-ip"></a> Internet Protocol (IP)</h2>
+<p><strong>Format</strong>:</p>
+<img src="/img/loading.gif" data-original="/img/计算机网络 IPv4 Datagram.jpg" style="zoom:40%;" />
+<p><strong>Fragmentation</strong> (碎片化) &amp; <strong>Reassembly</strong> (重组):</p>
+<ul>
+<li><strong>Maximum Transmission Unit</strong> (<strong>MTU</strong>): The largest possible link-level frame (e.g., Ethernet is 1500 bytes).</li>
+<li><strong>Fragmentation</strong>: Large IP datagrams are divided into smaller ones when the next link’s MTU is too small.</li>
+<li><strong>Reassembly</strong>: Done <strong>only at the final destination</strong> to reduce router load.</li>
+</ul>
+<img src="/img/loading.gif" data-original="/img/计算机网络 IP Fragmentation & Reassembly.jpg" style="zoom:40%;" />
+<p><strong>IPv4 Addressing</strong> &amp; <strong>Subnet</strong>:</p>
+<ul>
+<li>
+<p><strong>IPv4 Address</strong>: 32-bit identifier for a specific <strong>interface</strong> (not the whole host).</p>
+</li>
+<li>
+<p><strong>Subnet</strong>: Device interfaces that cam physically reach each other <strong>without an intervening</strong> (介入) <strong>router</strong>.</p>
+</li>
+<li>
+<p><strong>IP Address Allocation</strong>:</p>
+<ul>
+<li><strong>Internet Corporation for Assigned Names and Numbers</strong> (<strong>ICANN</strong>): Global organization that allocates IP addresses, manages DNS, assigns domain names, and resolves disputes (争议).</li>
+<li>A subnet/network gets its IP block by being allocated a portion of its provider <strong>ISP’s address space</strong>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Classless Inter-Domain Routing</strong> (<strong>CIDR</strong>): Address format <code>a.b.c.d/x</code>, where <code>x</code> is the number of bits in the <strong>subnet portion</strong>.</p>
+<ul>
+<li>Calculation: Determine the block size based on host requirements using powers of <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">2^n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.664392em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span></span></span></span></span></span></span> (e.g. <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>28</mn><mo>→</mo><msup><mn>2</mn><mn>5</mn></msup></mrow><annotation encoding="application/x-tex">28 \to 2^5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">8</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span></span></span></span>, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>62</mn><mo>→</mo><msup><mn>2</mn><mn>6</mn></msup></mrow><annotation encoding="application/x-tex">62 \to 2^6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">6</span><span class="mord">2</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">6</span></span></span></span></span></span></span></span></span></span></span>).</li>
+</ul>
+</li>
+<li>
+<p><strong>Route Aggregation</strong> (路由聚合): An ISP can advertise one single large prefix (e.g., <code>200.23.16.0/20</code>) to the Internet instead of many small individual prefixes. This keeps global routing tables small and efficient.</p>
+</li>
+<li>
+<p><strong>Dynamic Host Configuration Protocol</strong> (<strong>DHCP</strong>):</p>
+<ul>
+<li>
+<p>Goal: Allow a host to dynamically obtain an IP address when it joins the network. “<strong>plug-and-play</strong> (即插即用)”</p>
+</li>
+<li>
+<p>Process: Discover, Offer, Request, ACK. (DORA)</p>
+<img src="/img/loading.gif" data-original="/img/计算机网络 DHCP Process.jpg" style="zoom:40%;" />
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Network Address Translation</strong> (<strong>NAT</strong>):</p>
+<ul>
+<li>
+<p>Reserve blocks of IP address for LANs.</p>
+<img src="/img/loading.gif" data-original="/img/计算机网络 NAT Reserved Addresses.jpg" style="zoom:60%;" />
+</li>
+<li>
+<p>Mechanism: Use <strong>Port Numbers</strong>, recorded in the <strong>NAT Translation Table</strong>.</p>
+</li>
+<li>
+<p>Pros:</p>
+<ul>
+<li><strong>Saves IPs</strong>: Only one ISP-allocated address needed for all devices.</li>
+<li><strong>Flexibility</strong>: Can change internal IPs or change ISPs without notifying the outside world.</li>
+<li><strong>Security</strong>: Devices inside the LAN are not directly addressable/visible from the internet.</li>
+</ul>
+</li>
+<li>
+<p>Cons:</p>
+<ul>
+<li><strong>Port Limit</strong>: The port field is 16-bit, allowing ~60,000 simultaneous connections per public IP.</li>
+<li><strong>Layer Violation</strong>: Routers should only process up to layer 3.</li>
+<li><strong>End-to-End Argument Violation</strong>: Applications like BitTorrent or Skype struggle because peers cannot initiate connections into a NATed network directly (they don’t have a public IP).</li>
+</ul>
+</li>
+</ul>
+<p><strong>IPv6</strong>:</p>
+<ul>
+<li>
+<p>Format:</p>
+<img src="/img/loading.gif" data-original="/img/计算机网络 IPv6 Datagram.jpg" style="zoom:40%;" />
+<ul>
+<li><strong>Fixed Header</strong>: Fixed length of <strong>40 bytes</strong> (Simpler than IPv4’s variable 20+ bytes).</li>
+<li><strong>Priority</strong> (<strong>Traffic Class</strong>): Identify priority (e.g., voice vs. email).</li>
+<li><strong>Flow Label</strong>: Identify datagrams in the same “flow” (for QoS).</li>
+<li><strong>Next Header</strong>: Identifies the upper layer protocol (TCP/UDP) OR an extension header.</li>
+<li><strong>Hop Limit</strong>: Same as TTL in IPv4 (decremented at each router)…</li>
+</ul>
+</li>
+<li>
+<p>Differences:</p>
+<ul>
+<li><strong>No Checksum</strong>: Removed to reduce processing time at each hop. (Reliability is handled by Link Layer and Transport Layer).</li>
+<li><strong>No Fragmentation</strong>: Routers do not fragment packets.
+<ul>
+<li>If a packet is too big for the link: The router <strong>drops</strong> it and sends an ICMP “Packet Too Big” error back to the sender.</li>
+<li>Sender must use smaller packets.</li>
+</ul>
+</li>
+<li><strong>No Options</strong>: Moved outside the base header to the “Next Header” chain.</li>
+</ul>
+</li>
+<li>
+<p><strong>Tunneling</strong> (隧道): IPv6 datagram is carried as <strong>payload</strong> in an IPv4 datagram among IPv4 routers.</p>
+</li>
+</ul>
+<h2 id="generalized-forwarding"><a class="markdownIt-Anchor" href="#generalized-forwarding"></a> Generalized Forwarding</h2>
+<p><strong>Traditional Forwarding</strong>: Based <strong>only</strong> on destination IP address.</p>
+<p><strong>Generalized Forwarding</strong> (广义转发): Based on <strong>multiple header fields</strong> (IP src/dest, MAC src/dest, TCP/UDP ports, etc.).</p>
+<ul>
+<li><strong>Match</strong>: Look at various fields in the packet header.</li>
+<li><strong>Action</strong>: Drop, forward, modify, or send to controller.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Device</th>
+<th>Match</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Router</strong></td>
+<td>Longest destination IP prefix</td>
+<td>Forward out a link</td>
+</tr>
+<tr>
+<td><strong>Switch</strong></td>
+<td>Destination MAC address</td>
+<td>Forward</td>
+</tr>
+<tr>
+<td><strong>Firewall</strong></td>
+<td>IP addresses and TCP/UDP port numbers</td>
+<td>Permit or deny</td>
+</tr>
+<tr>
+<td><strong>NAT</strong></td>
+<td>IP address and port</td>
+<td>Rewrite address and port</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="chapter-5-network-control-plane"><a class="markdownIt-Anchor" href="#chapter-5-network-control-plane"></a> Chapter 5. Network - Control Plane</h1>
+<p><strong>2 Approaches of Control Plane</strong>:</p>
+<ul>
+<li><strong>Per-Router Control</strong> (traditional)</li>
+<li><strong>Logically Centralized Control</strong> (SDN)</li>
+</ul>
+<h2 id="routing-protocols"><a class="markdownIt-Anchor" href="#routing-protocols"></a> Routing Protocols</h2>
+<p><strong>Link-State</strong> (<strong>LS</strong>): <strong>Dijkstra’s Algorithm</strong>:</p>
+<ul>
+<li>Characteristics:
+<ul>
+<li><strong>Global Information</strong>: All routers have complete topology, link cost info.</li>
+<li><strong>Link State Broadcast</strong>: Every node broadcasts its link costs to all other nodes so everyone has the same view of the network.</li>
+</ul>
+</li>
+<li><strong>Oscillation Problem</strong>: 如果路越堵，代价越高，大家就会一窝蜂避开堵的路去走空的路，结果空路瞬间堵死，大家又一窝蜂回来。</li>
+</ul>
+<p><strong>Distance Vector</strong> (<strong>DV</strong>): <strong>Bellman-Ford</strong>:</p>
+<ul>
+<li>Characteristics:
+<ul>
+<li><strong>Distributed</strong>: Each node communicates only with neighbors.</li>
+<li><strong>Iterative</strong>: Continues until no more information is exchanged.</li>
+<li><strong>Asynchronous</strong> (异步的): Nodes don’t need to operate in lockstep.</li>
+</ul>
+</li>
+<li><strong>Bellman-Ford Equation</strong>: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mi>x</mi></msub><mo stretchy="false">(</mo><mi>y</mi><mo stretchy="false">)</mo><mo>=</mo><msub><mo><mi>min</mi><mo>⁡</mo></mo><mi>v</mi></msub><mo stretchy="false">{</mo><mi>c</mi><mo stretchy="false">(</mo><mi>x</mi><mo separator="true">,</mo><mi>v</mi><mo stretchy="false">)</mo><mo>+</mo><msub><mi>d</mi><mi>v</mi></msub><mo stretchy="false">(</mo><mi>y</mi><mo stretchy="false">)</mo><mo stretchy="false">}</mo></mrow><annotation encoding="application/x-tex">d_x(y) = \min_v\{c(x, v) + d_v(y)\}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal">d</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">x</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop"><span class="mop">min</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.03588em;">v</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">{</span><span class="mord mathnormal">c</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal">d</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.03588em;">v</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mclose">}</span></span></span></span>​.</li>
+<li><strong>Count-to-Infinity Problem</strong>: 假设 A-B-C 连成线。A 断网了。B 发现 A 不见了，但 C 还没反应过来，C 告诉 B：“我有去 A 的路（其实是 C-&gt;B-&gt;A）”。结果 B 和 C 互相指着对方说“走你那边”，距离在 2, 3, 4, 5… 中无限增加，直到加到无穷大（通常是 16）才发现路不通。
+<ul>
+<li>Partial Solution: <strong>Poisoned Reverse</strong>: C 在给 B 发路由表时会撒个谎：“虽然我有去 A 的路，但因为我是经由你 B 去的，所以我骗你说我去 A 是无穷远”。这样 B 就不会傻乎乎地想走 C 这条回头路了。</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Link State (LS)</th>
+<th>Distance Vector (DV)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Message Complexity</strong></td>
+<td>High. <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mi>E</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(nE)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mclose">)</span></span></span></span> messages sent (<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span></span></span></span> nodes, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi></mrow><annotation encoding="application/x-tex">E</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span></span></span></span> links).</td>
+<td>Low. Exchange between neighbors only.</td>
+</tr>
+<tr>
+<td><strong>Speed of Convergence</strong></td>
+<td>Fast. <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><msup><mi>n</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span> algorithm complexity.</td>
+<td>Slow. Time varies; susceptible to <strong>routing loops</strong> and the <strong>count-to-infinity</strong> problem.</td>
+</tr>
+<tr>
+<td><strong>Robustness</strong></td>
+<td>Strong. Nodes may advertise incorrect <strong>link</strong> cost. Each node computes its own table (errors stay local).</td>
+<td>Weak. Nodes may advertise incorrect <strong>path</strong> cost. Errors <strong>propagate</strong> through the network (tables used by others).</td>
+</tr>
+</tbody>
+</table>
+<h2 id="intra-as-routing-interior-gateway-protocols-igp"><a class="markdownIt-Anchor" href="#intra-as-routing-interior-gateway-protocols-igp"></a> Intra-AS Routing: Interior Gateway Protocols (IGP)</h2>
+<p><strong>Autonomous Systems</strong> (<strong>AS</strong>, <strong>Domains</strong>): Aggregated routers.</p>
+<ul>
+<li><strong>Gateway Router</strong>: at “edge” of its own AS, has link(s) to router(s) in other AS.</li>
+<li><strong>Interior Router</strong>: No link to other AS.</li>
+</ul>
+<p><strong>Common Intra-AS Routing Protocols</strong>:</p>
+<ul>
+<li><strong>RIP</strong>: Routing Information Protocol (distance vector-based).</li>
+<li><strong>OSPF</strong>: Open Shortest Path First (link state-based).</li>
+<li><strong>IS-IS</strong> protocol essentially same as OSPF.</li>
+<li><strong>IGRP</strong>: Interior Gateway Routing Protocol (Cisco proprietary for decades, until 2016).</li>
+</ul>
+<p><strong>Open Shortest Path First</strong> (<strong>OSPF</strong>):</p>
+<ul>
+<li>
+<p><strong>“Open”</strong>: Publicly available.</p>
+</li>
+<li>
+<p><strong>Algorithm</strong>: Uses <strong>Link-State</strong> algorithm (Dijkstra).</p>
+<ul>
+<li>Each router constructs a complete topological map of the entire AS.</li>
+<li>Each router locally runs Dijkstra’s algorithm to find the shortest path.</li>
+</ul>
+</li>
+<li>
+<p><strong>Flooding</strong>: Router floods OSPF link-state advertisements (LSA) to all other routers in the <strong>entire</strong> AS.</p>
+</li>
+<li>
+<p><strong>Transport</strong>: OSPF messages are carried <strong>directly over IP</strong> (not TCP or UDP).</p>
+</li>
+<li>
+<p>Advanced Features:</p>
+<ul>
+<li><strong>Security</strong>: All OSPF messages are <strong>authenticated</strong>. This prevents malicious intrusion (bad guys injecting fake routes).</li>
+<li><strong>Multiple Paths</strong>: Allows multiple same-cost paths (RIP only chooses one). This helps with load balancing.</li>
+<li><strong>Integrated Multicast</strong>: Multicast OSPF (MOSPF) uses the same topology database.</li>
+<li><strong>Hierarchical</strong>: Supports hierarchical OSPF in large domains.</li>
+</ul>
+</li>
+<li>
+<p><strong>Hierarchical OSPF</strong>:</p>
+<ul>
+<li>Solution: <strong>Two-Level Hierarchy</strong>: Local Area &amp; Backbone.</li>
+</ul>
+<img src="/img/loading.gif" data-original="/img/计算机网络 Hierarchical OSPF.jpg" style="zoom:40%;" />
+</li>
+</ul>
+<h2 id="inter-as-routing-border-gateway-protocol-bgp"><a class="markdownIt-Anchor" href="#inter-as-routing-border-gateway-protocol-bgp"></a> Inter-AS Routing: Border Gateway Protocol (BGP)</h2>
+<ul>
+<li><strong>Transport</strong>: Messages exchanged over <strong>TCP</strong> connections (Reliable).</li>
+<li>2 Flavors:
+<ul>
+<li><strong>eBGP</strong> (External): Obtain subnet reachability information from neighboring ASes.</li>
+<li><strong>iBGP</strong> (Internal): Propagate (传播) reachability information to all internal routers within the AS.</li>
+<li>Gateway Routers run both protocols to bridge the internal network with the outside world.</li>
+</ul>
+</li>
+<li><strong>Path Attributes</strong>:
+<ul>
+<li><strong>AS-PATH</strong>: Lists the ASes the advertisement has passed through (e.g., AS2, AS3). This is critical for <strong>loop detection</strong>—if a router sees its own AS number in the path, it rejects the route.</li>
+<li><strong>NEXT-HOP</strong>: The IP address of the router interface that begins the AS-PATH. This links the inter-AS path (BGP) with the intra-AS forwarding (OSPF).</li>
+</ul>
+</li>
+<li><strong>Route Selection Rule</strong>: Order:
+<ul>
+<li><strong>Local Preference</strong> (<strong>Policy</strong>): Highest value wins. This represents the admin’s commercial/political preference.</li>
+<li><strong>Shortest AS-PATH</strong>: The route passing through the fewest number of ASes.</li>
+<li><strong>Closest NEXT-HOP</strong> (“Hot Potato” Routing, 烫手山芋): Choose the gateway that has the least <strong>intra-domain</strong> cost (via OSPF/RIP). The router wants to dump the packet out of its AS as quickly as possible.</li>
+</ul>
+</li>
+<li><strong>IP Anycast</strong>:
+<ul>
+<li>Mechanism: Assign the <strong>same IP address</strong> to multiple servers in different geographic locations and advertise it via BGP from all those locations.</li>
+<li>Result: Routers naturally route distinct users to the <strong>closest</strong> server (based on BGP hop counts). Used heavily by DNS and CDNs.</li>
+</ul>
+</li>
+</ul>
+<h2 id="software-defined-networking-sdn"><a class="markdownIt-Anchor" href="#software-defined-networking-sdn"></a> Software-Defined Networking (SDN)</h2>
+<p><strong>SDN</strong>: Logically centralized control plane.</p>
+<p><strong>SDN Perspective</strong>:</p>
+<ul>
+<li>
+<p><strong>Network-Control Applications</strong> (Top):</p>
+<ul>
+<li>The “brains”. Programs that implement control logic (Routing, Access Control, Load Balancing).</li>
+<li>Unbundled (分离的) from the hardware.</li>
+<li>Communicates via <strong>Northbound API</strong>.</li>
+</ul>
+</li>
+<li>
+<p><strong>SDN Controller</strong> (Middle):</p>
+<ul>
+<li>The <strong>Network OS</strong>. Maintains network state information (topology, link status).</li>
+<li>Implemented as a distributed system for reliability (physically distributed, logically centralized).</li>
+<li>Interacts with switches via <strong>Southbound API</strong> and apps via <strong>Northbound API</strong>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Data Plane Switches</strong> (Bottom):</p>
+<ul>
+<li>Fast, simple, commodity (必需) hardware.</li>
+<li>Executes <strong>Generalized Forwarding</strong> (Match + Action) based on flow tables computed by the controller.</li>
+<li>Communicates via <strong>Southbound API</strong> (e.g., OpenFlow).</li>
+</ul>
+</li>
+</ul>
+<p><strong>OpenFlow Protocol</strong>:</p>
+<ul>
+<li>Role: The standard protocol for the <strong>Southbound Interface</strong>.</li>
+<li>Message Types:
+<ul>
+<li><strong>Controller-to-Switch</strong>: <code>Configure</code>, <code>Modify-State</code> (add/delete rules), <code>Read-State</code>, <code>Packet-Out</code> (send this packet).</li>
+<li><strong>Switch-to-Controller</strong>: <code>Packet-In</code> (I don’t know what to do with this packet, help!), <code>Flow-Removed</code>, <code>Port-Status</code> (Link up/down).</li>
+</ul>
+</li>
+</ul>
+<h2 id="the-internet-control-message-protocol-icmp"><a class="markdownIt-Anchor" href="#the-internet-control-message-protocol-icmp"></a> The Internet Control Message Protocol (ICMP)</h2>
+<p><strong>ICMP</strong>:</p>
+<ul>
+<li>
+<p>Role: <strong>Error reporting</strong>, <strong>Echo request/reply</strong> (ping).</p>
+</li>
+<li>
+<p>ICMP messages are carried <strong>inside</strong> IP datagrams (Protocol field = 1).</p>
+</li>
+<li>
+<p>Message Structure: Type + Code + Payload (the header and the first 8 bytes of IP datagram causing error).</p>
+</li>
+</ul>
+<p><strong>Traceroute</strong>:</p>
+<ul>
+<li>
+<p>Goal: Trace the route (sequence of routers) from source to destination.</p>
+</li>
+<li>
+<p>Mechanism:</p>
+<ol>
+<li>Source sends a series of <strong>UDP segments</strong> to the destination.</li>
+<li>Sets <strong>TTL = 1</strong> for the 1st set, <strong>TTL = 2</strong> for the 2nd set, etc.</li>
+<li>Uses an <strong>unlikely port number</strong> (so the destination will reject it).</li>
+</ol>
+<p>When the packet finally arrives (TTL is sufficient), the destination sees the weird (怪异的) port number and sends back an <strong>ICMP Type 3 Code 3 (Port Unreachable)</strong>.</p>
+</li>
+</ul>
+<hr />
+<h1 id="chapter-6-link"><a class="markdownIt-Anchor" href="#chapter-6-link"></a> Chapter 6. Link</h1>
+<p><strong>Terminology</strong>:</p>
+<ul>
+<li><strong>Nodes</strong>: Hosts and routers</li>
+<li><strong>Links</strong>: Communication channels that connect adjacent nodes along the communication path (e.g., wired, wireless, LANs).</li>
+</ul>
+<p><strong>Services</strong>:</p>
+<ul>
+<li><strong>Framing</strong> (成帧):
+<ul>
+<li>Encapsulate (封装) datagram into frame, adding <strong>header</strong> (use MAC addresses rather than IP!) and <strong>trailer</strong>.</li>
+</ul>
+</li>
+<li><strong>Link Access</strong>:
+<ul>
+<li><strong>Media Access Control</strong> (<strong>MAC</strong>) protocol specifies rules for transmitting onto the link (e.g., “don’t talk when others are talking”).</li>
+</ul>
+</li>
+<li><strong>Reliable Delivery</strong>:
+<ul>
+<li>Guarantees to move each datagram across the link without error (via ACKs and retransmissions).</li>
+<li>Seldom used on low bit-error links (fiber, coax) to save overhead; mostly used on <strong>wireless links</strong> (high error rates).</li>
+</ul>
+</li>
+<li><strong>Flow Control</strong>:
+<ul>
+<li>Pacing between adjacent sending and receiving nodes to prevent buffer overflow.</li>
+</ul>
+</li>
+<li><strong>Error Detection</strong>:
+<ul>
+<li>Detects bit errors caused by signal attenuation (衰减) or noise.</li>
+<li>Hardware implemented (e.g., CRC). Receiver drops the frame or asks for retransmission.</li>
+</ul>
+</li>
+<li><strong>Error Correction</strong>:
+<ul>
+<li>Receiver identifies and corrects bit error(s) without resorting to retransmission.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Implementation</strong>: In each and every host.</p>
+<ul>
+<li>Hardware: Implemented in the <strong>Network Interface Card (NIC)</strong> or on a chip (Network Adaptor).</li>
+<li>Software: Attaches into host’s system buses (总线); drivers handle interrupts and interaction with the OS.</li>
+</ul>
+<h2 id="error-detection-correction"><a class="markdownIt-Anchor" href="#error-detection-correction"></a> Error Detection &amp; Correction</h2>
+<ul>
+<li><strong>Error Detection and Correction bits</strong> (<strong>EDC</strong>): Extra bits added to the frame header/trailer.</li>
+<li><strong>D</strong> (Data): The payload being protected.</li>
+<li>Trade-off: Larger EDC field yields better detection/correction, but creates larger overhead.</li>
+<li>Reality: Error detection is <strong>not 100% reliable</strong>! (Though protocol designers make the probability of missed errors negligible).</li>
+</ul>
+<p><strong>Parity Checking</strong>:</p>
+<ul>
+<li><strong>Single Bit Parity</strong>:
+<ul>
+<li>Mechanism: Add <strong>one bit</strong> to make the total number of 1s even (Even Parity) or odd (Odd Parity).</li>
+<li>Limit: Can detect <strong>single bit errors</strong>, but fails if an even number of bits flip (e.g., two bits flip, the count remains even).</li>
+</ul>
+</li>
+<li><strong>Two-Dimensional Bit Parity</strong>
+<ul>
+<li>Mechanism: Arrange data in a matrix (rows and columns). Calculate parity for each row AND each column.</li>
+<li>Feature: Can <strong>detect and correct</strong> a single bit error. (The intersection of the bad row and bad column pinpoints the error).</li>
+</ul>
+</li>
+</ul>
+<p><strong>Internet Checksum</strong>:</p>
+<ul>
+<li>Mostly used in Transport Layer.</li>
+<li>Mechanism: Treat data as 16-bit integers, sum them up (1’s complement sum).</li>
+</ul>
+<p><strong>Cyclic Redundancy Check</strong> (<strong>CRC</strong>):</p>
+<ul>
+<li>
+<p>选择长度为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">r + 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 的除数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi></mrow><annotation encoding="application/x-tex">G</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal">G</span></span></span></span> (<strong>Generator</strong>)，用 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>⋅</mo><msup><mn>2</mn><mi>r</mi></msup></mrow><annotation encoding="application/x-tex">D \cdot 2^r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.664392em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.02778em;">r</span></span></span></span></span></span></span></span></span></span></span> (<strong>Data bits</strong>) 做逐位异或除法得到 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span></span></span></span> 位的 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi></mrow><annotation encoding="application/x-tex">R</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span></span></span></span> (<strong>CRC bits</strong>)。接收方用 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">⟨</mo><mi>D</mi><mo separator="true">,</mo><mi>R</mi><mo stretchy="false">⟩</mo></mrow><annotation encoding="application/x-tex">\langle D, R \rangle</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">⟨</span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mclose">⟩</span></span></span></span> 再做逐位异或除法，得到余数如果为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>，则无误，反之有误。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">           101011</span><br><span class="line">     -------------</span><br><span class="line">1001 )  101110000      &lt;-- 补零后的 D</span><br><span class="line">        1001           &lt;-- 被除数首位是 1，用 G 做异或</span><br><span class="line">        ----</span><br><span class="line">         0101          &lt;-- 结果</span><br><span class="line">         0000          &lt;-- 首位是 0，不够除（商 0），移位</span><br><span class="line">         ----</span><br><span class="line">          1010         &lt;-- 拉下来一位，首位是 1，可以除</span><br><span class="line">          1001         &lt;-- 用 G 做异或</span><br><span class="line">          ----</span><br><span class="line">           0110        &lt;-- 结果</span><br><span class="line">           0000        &lt;-- 首位是0</span><br><span class="line">           ----</span><br><span class="line">            1100       &lt;-- 拉下来，首位是 1</span><br><span class="line">            1001       &lt;-- 用 G 做异或</span><br><span class="line">            ----</span><br><span class="line">             1010      &lt;-- 结果</span><br><span class="line">             1001      &lt;-- 首位是 1，用 G 做异或</span><br><span class="line">             ----</span><br><span class="line">              011      &lt;-- 余数 R</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>Widely used in practice (Ethernet, 802.11 WiFi, ATM).</p>
+</li>
+</ul>
+<h2 id="multiple-access-protocols"><a class="markdownIt-Anchor" href="#multiple-access-protocols"></a> Multiple Access Protocols</h2>
+<p><strong>Channel Partitioning</strong>:</p>
+<ul>
+<li><strong>TDMA</strong> (Time Division): Access to channel in “rounds”. Each station gets a <strong>fixed slot</strong> (length = packet time).
+<ul>
+<li>Con: Unused slots go idle (wasteful at low load).</li>
+</ul>
+</li>
+<li><strong>FDMA</strong> (Frequency Division): Channel spectrum divided into frequency bands.
+<ul>
+<li>Con: Unused bands go idle.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Random Access</strong>:</p>
+<ul>
+<li>Transmit at full rate <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi></mrow><annotation encoding="application/x-tex">R</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span></span></span></span>​. No a priori (先验) coordination. If collision occurs, wait a random time and retransmit.</li>
+<li><strong>Slotted ALOHA</strong>: Time is divided into slots. Nodes only start at the beginning of a slot. If collision occurs, retransmit in subsequent slots with probability <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">p</span></span></span></span> until success.
+<ul>
+<li>Efficiency: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo>=</mo><mi>N</mi><mo>⋅</mo><mi>p</mi><mo>⋅</mo><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><mi>p</mi><msup><mo stretchy="false">)</mo><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow></msup><mo>→</mo><mfrac><mn>1</mn><mi>e</mi></mfrac><mo>≈</mo><mn>37</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">E = N \cdot p \cdot (1 - p)^{N - 1} \to \frac{1}{e} \approx 37\%</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.63889em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">p</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.0913309999999998em;vertical-align:-0.25em;"></span><span class="mord mathnormal">p</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8413309999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.10903em;">N</span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.190108em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.845108em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">e</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.80556em;vertical-align:-0.05556em;"></span><span class="mord">3</span><span class="mord">7</span><span class="mord">%</span></span></span></span> (<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><mfrac><mn>1</mn><mi>N</mi></mfrac></mrow><annotation encoding="application/x-tex">p = \frac{1}{N}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">p</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.190108em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.845108em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.10903em;">N</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span>​).</li>
+</ul>
+</li>
+<li><strong>Pure ALOHA</strong>: No synchronization. Transmit immediately. Node <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathnormal">i</span></span></span></span> succeeds if no one transmits in <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><msub><mi>t</mi><mn>0</mn></msub><mo>−</mo><mn>1</mn><mo separator="true">,</mo><msub><mi>t</mi><mn>0</mn></msub><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[t_0 - 1, t_0]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord"><span class="mord mathnormal">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">]</span></span></span></span> AND no one transmits in <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><msub><mi>t</mi><mn>0</mn></msub><mo separator="true">,</mo><msub><mi>t</mi><mn>0</mn></msub><mo>+</mo><mn>1</mn><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[t_0, t_0 + 1]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord"><span class="mord mathnormal">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">]</span></span></span></span>.
+<ul>
+<li>Efficiency: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo>=</mo><mi>N</mi><mo>⋅</mo><mi>p</mi><mo>⋅</mo><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><mi>p</mi><msup><mo stretchy="false">)</mo><mrow><mn>2</mn><mo stretchy="false">(</mo><mi>N</mi><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></msup><mo>→</mo><mfrac><mn>1</mn><mrow><mn>2</mn><mi>e</mi></mrow></mfrac><mo>≈</mo><mn>18</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">E = N \cdot p \cdot (1 - p)^{2(N - 1)} \to \frac{1}{2e} \approx 18\%</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.63889em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">p</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.138em;vertical-align:-0.25em;"></span><span class="mord mathnormal">p</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8879999999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="mopen mtight">(</span><span class="mord mathnormal mtight" style="margin-right:0.10903em;">N</span><span class="mbin mtight">−</span><span class="mord mtight">1</span><span class="mclose mtight">)</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.190108em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.845108em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="mord mathnormal mtight">e</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.80556em;vertical-align:-0.05556em;"></span><span class="mord">1</span><span class="mord">8</span><span class="mord">%</span></span></span></span> (<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><mfrac><mn>1</mn><mi>N</mi></mfrac></mrow><annotation encoding="application/x-tex">p = \frac{1}{N}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">p</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.190108em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.845108em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.10903em;">N</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span>).</li>
+</ul>
+</li>
+<li><strong>CSMA</strong> (<strong>Carrier Sense Multiple Access</strong>): “<strong>Listen before transmit</strong>”. If channel idle, transmit; If channel busy, defer.
+<ul>
+<li>Collision exists due to propagation delay.</li>
+</ul>
+</li>
+<li><strong>CSMA/CD</strong> (<strong>Collision Detection</strong>): “<strong>Listen while talking</strong>”. If a collision detected, stop immediately (<strong>Abort</strong>), send a <strong>Jam Signal</strong> and enter <strong>Binary Exponential Backoff</strong>:
+<ul>
+<li>After <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">m</span></span></span></span>-th collision, choose a random wait time <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi></mrow><annotation encoding="application/x-tex">K</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">K</span></span></span></span> from <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">{</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo separator="true">,</mo><mo>⋯</mo><mtext> </mtext><mo separator="true">,</mo><mn>2</mn><mi>m</mi><mtext>−</mtext><mn>1</mn><mo stretchy="false">}</mo></mrow><annotation encoding="application/x-tex">\{0,1,\cdots,2m−1\}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">{</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner">⋯</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">2</span><span class="mord mathnormal">m</span><span class="mord">−</span><span class="mord">1</span><span class="mclose">}</span></span></span></span>. Wait <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi><mo>×</mo><mn>512</mn></mrow><annotation encoding="application/x-tex">K \times 512</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span><span class="mord">1</span><span class="mord">2</span></span></span></span>​​ bit times.</li>
+<li>Used in <strong>Ethernet</strong>.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Taking Turns</strong>:</p>
+<ul>
+<li><strong>Polling</strong> (轮询): Master node “invites” slave nodes to transmit in turn.</li>
+<li><strong>Token Passing</strong>: A control <strong>Token</strong> is passed around. Only the holder can speak.</li>
+<li>Concerns: Token overhead; Single point of failure.</li>
+</ul>
+<h2 id="lans"><a class="markdownIt-Anchor" href="#lans"></a> LANs</h2>
+<p><strong>MAC Address</strong> (48-bit):</p>
+<ul>
+<li>Link Layer address.</li>
+<li>Burned into the NIC ROM.</li>
+<li>Unique, administered by IEEE.</li>
+</ul>
+<p><strong>Address Resolution Protocol</strong> (<strong>ARP</strong>):</p>
+<ul>
+<li>Resolves addresses <strong>only</strong> for interfaces on the <strong>same subnet</strong>.</li>
+<li><strong>ARP Table</strong>: Stored in each host/router. Contains <code>&lt; IP address; MAC address; TTL &gt;</code>.</li>
+<li>Steps (Same LAN): Broadcast Query; Unicast Reply; Cache.</li>
+<li>Different LANs: IP Addresses (Source &amp; Dest) do NOT change from source to destination; MAC Addresses (Source &amp; Dest) change at every hop.</li>
+</ul>
+<p><strong>Ethernet</strong>:</p>
+<ul>
+<li>
+<p>Physical Topology:</p>
+<ul>
+<li><strong>Bus</strong> (总线型, Out-of-date): all nodes in same collision domain.</li>
+<li><strong>Star</strong> (星型, Modern): Active <strong>switch</strong> in center. Each “spoke” runs a separate Ethernet protocol. <strong>No collisions</strong> between nodes.</li>
+</ul>
+</li>
+<li>
+<p>Service: <strong>Connectionless</strong>. <strong>Unreliable</strong>.</p>
+</li>
+<li>
+<p>Protocol: <strong>CSMA/CD</strong> with binary backoff.</p>
+</li>
+<li>
+<p>Frame Structure:</p>
+<img src="/img/loading.gif" data-original="/img/计算机网络 Ethernet Frame.jpg" style="zoom:40%;" />
+<ul>
+<li><strong>Preamble</strong> (前导码, 8 bytes): Used to synchronize receiver/sender clock rates. (7 bytes of 10101010 + 1 byte of 10101011).</li>
+<li><strong>Dest Address</strong> (6 bytes): Destination MAC.</li>
+<li><strong>Source Address</strong> (6 bytes): Source MAC.</li>
+<li><strong>Type</strong> (2 bytes): Indicates higher layer protocol (mostly IP, but could be ARP, etc.).</li>
+<li><strong>Data</strong> (<strong>Payload</strong>, 46-1500 (MTU) bytes): IP datagram.</li>
+<li><strong>CRC</strong> (4 bytes): Error check. If error detected, frame is dropped.</li>
+</ul>
+</li>
+<li>
+<p>802.3 Ethernet Standards.</p>
+</li>
+</ul>
+<p><strong>Switches</strong>:</p>
+<ul>
+<li><strong>Layer</strong>: Link-layer device (Layer 2). It sees <strong>MAC addresses</strong>, not IP addresses.</li>
+<li><strong>Role</strong>: Store and forward Ethernet frames.</li>
+<li><strong>Transparent</strong>: Hosts are unaware of the switch’s presence.</li>
+<li><strong>Plug-and-play</strong>: No configuration needed (unlike routers).</li>
+<li><strong>Star Topology</strong>: Hosts have dedicated, direct connections to the switch.</li>
+<li><strong>No Collisions</strong>: Switches buffer packets. Full duplex. A-to-A’ and B-to-B’ can transmit <strong>simultaneously</strong>.</li>
+<li><strong>Switch Table</strong>: (<strong>Self-learning</strong>) Contains entries (MAC Address, Interface, Time Stamp).</li>
+</ul>
+<p><strong>VLANs</strong>:</p>
+<ul>
+<li><strong>Port-based VLAN</strong>: Switch ports are grouped by software.</li>
+<li><strong>Trunking</strong>: Spanning multiple switches.
+<ul>
+<li><strong>Trunk Port</strong>: A port carrying frames for multiple VLANs between switches.</li>
+<li><strong>802.1Q</strong>: Protocol that adds a <strong>VLAN Tag</strong> to the Ethernet frame header so the receiving switch knows which VLAN the frame belongs to.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h1 id="chapter-7-wireless-networks"><a class="markdownIt-Anchor" href="#chapter-7-wireless-networks"></a> Chapter 7. Wireless Networks</h1>
+<h2 id="code-division-multiple-access-cdma"><a class="markdownIt-Anchor" href="#code-division-multiple-access-cdma"></a> Code Division Multiple Access (CDMA)</h2>
+<ul>
+<li>Concept: All users share the <strong>same frequency</strong> at the <strong>same time</strong>.</li>
+<li><strong>Chipping Sequence</strong> (Code): Each user is assigned a <strong>unique</strong> code (e.g., <code>1, 1, 1, -1</code>).</li>
+<li><strong>Encoding</strong>: Signal = Original Data <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>×</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">×</span></span></span></span> Chipping Sequence.</li>
+<li><strong>Orthogonality</strong> (Key Math): The codes are orthogonal. The inner product of two different codes is <strong>0</strong>.</li>
+<li><strong>Decoding</strong>: Receiver calculates the inner product of the <strong>received signal</strong> and the <strong>sender’s code</strong>.
+<ul>
+<li>If multiplied by Sender A’s code <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\to</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">→</span></span></span></span> Recovers A’s data.</li>
+<li>If multiplied by Sender B’s code <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\to</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">→</span></span></span></span> Result is 0 (Noise is filtered out).</li>
+</ul>
+</li>
+</ul>
+<h2 id="ieee-80211-wireless-lan"><a class="markdownIt-Anchor" href="#ieee-80211-wireless-lan"></a> IEEE 802.11 Wireless LAN</h2>
+<p><strong>Wi-Fi Architecture</strong>:</p>
+<ul>
+<li><strong>Basic Service Set</strong> (<strong>BSS</strong>): The fundamental building block (“Cell”). Contains:
+<ul>
+<li><strong>Wireless Hosts</strong>: Laptops, phones.</li>
+<li><strong>Access Point</strong> (<strong>AP</strong>): The Base Station (central coordinator).</li>
+</ul>
+</li>
+<li><strong>Modes</strong>:
+<ul>
+<li><strong>Infrastructure Mode</strong>: Hosts communicate <strong>only</strong> via the AP. (Standard home/office Wi-Fi).</li>
+<li><strong>Ad Hoc Mode</strong>: No AP. Hosts communicate directly with each other (Peer-to-peer).</li>
+</ul>
+</li>
+<li><strong>Channels</strong>: The spectrum (e.g., 2.4GHz) is divided into channels. APs on same/adjacent channels interfere.</li>
+</ul>
+<p><strong>Scanning</strong> &amp; <strong>Association</strong>:</p>
+<ul>
+<li><strong>Passive Scanning</strong> (被动扫描):
+<ul>
+<li>AP periodically sends <strong>Beacon Frames</strong> (containing SSID &amp; MAC).</li>
+<li>Host listens to channels and finds APs.</li>
+</ul>
+</li>
+<li><strong>Active Scanning</strong> (主动扫描):
+<ul>
+<li>Host broadcasts <strong>Probe Request</strong> (“Who is out there?”).</li>
+<li>APs respond with <strong>Probe Response</strong>.</li>
+</ul>
+</li>
+<li><strong>Association</strong>: Host selects an AP and authenticates.</li>
+</ul>
+<p><strong>Wi-Fi Protocol: CSMA/CA</strong> (Collision Avoidance):</p>
+<ul>
+<li><strong>Why no Collision Detection (CD)?</strong>
+<ol>
+<li><strong>Fading</strong>: The signal fades over distance. The sender might be too far to hear the collision at the receiver.</li>
+<li><strong>Overwhelmed</strong>: The sender’s own transmitting signal is much stronger than any incoming signal. It can’t “hear” while “talking”.</li>
+</ol>
+</li>
+<li><strong>Mechanism:</strong>
+<ol>
+<li><strong>Listen</strong> (DIFS): If idle for DIFS time <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\to</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">→</span></span></span></span> Transmit.</li>
+<li><strong>Busy?</strong> Start <strong>Random Backoff</strong>. Countdown only when channel is idle.</li>
+<li><strong>Transmit</strong>.</li>
+<li><strong>ACK</strong> (Crucial): Receiver <strong>must</strong> send an ACK (after <strong>SIFS</strong> time). If sender gets no ACK, it assumes packet loss and retransmits.</li>
+</ol>
+</li>
+</ul>
+<p><strong>RTS</strong> / <strong>CTS</strong>:</p>
+<ul>
+<li><strong>Solution</strong>: Reserve the channel using small packets.
+<ol>
+<li><strong>A -&gt; AP</strong>: Sends <strong>RTS</strong> (Request to Send).</li>
+<li><strong>AP -&gt; Broadcast</strong>: Sends <strong>CTS</strong> (Clear to Send).</li>
+<li><strong>A -&gt; AP</strong>: Sends Data.</li>
+</ol>
+</li>
+<li><strong>Benefit</strong>: Collisions only happen on small RTS packets, not long Data packets. 别人看到 A 在与 AP 传输自动等待。</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://blog.lyx1311.top">lyx1311</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://blog.lyx1311.top/2025/12/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">https://blog.lyx1311.top/2025/12/29/计算机网络-学习笔记/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://blog.lyx1311.top" target="_blank">FUN WORLD</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://cdn.pixabay.com/photo/2022/04/15/06/32/river-7133713_1280.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2025/12/27/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><img class="next-cover" src="/img/loading.gif" data-original="https://cdn.pixabay.com/photo/2022/01/13/21/56/loschwitzer-bridge-6936096_1280.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">数字逻辑 学习笔记</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/loading.gif" data-original="/img/clown.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">lyx1311</div><div class="author-info__description">Fun World, Fun You!</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">33</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">36</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/lyx1311" target="_blank" title="GitHub"><i class="fab fa-github"></i></a><a class="social-icon" href="https://www.luogu.com.cn/user/193308" target="_blank" title="洛谷"><i class="fa fa-book-open"></i></a><a class="social-icon" href="mailto:lyx1311@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">若图片或公式等内容长时间无法加载，请柯学上网 ( •̀ ω •́ )✧</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#chapter-1-introduction"><span class="toc-number">1.</span> <span class="toc-text"> Chapter 1. Introduction</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#internet"><span class="toc-number">1.1.</span> <span class="toc-text"> Internet</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#layers-protocols"><span class="toc-number">1.2.</span> <span class="toc-text"> Layers &amp; Protocols</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#network-edge"><span class="toc-number">1.3.</span> <span class="toc-text"> Network Edge</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#network-core"><span class="toc-number">1.4.</span> <span class="toc-text"> Network Core</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#performance-metrics"><span class="toc-number">1.5.</span> <span class="toc-text"> Performance Metrics</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#delay"><span class="toc-number">1.6.</span> <span class="toc-text"> Delay</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#packet-loss"><span class="toc-number">1.7.</span> <span class="toc-text"> Packet Loss</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#throughput-%E5%90%9E%E5%90%90%E9%87%8F"><span class="toc-number">1.8.</span> <span class="toc-text"> Throughput 吞吐量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#network-security"><span class="toc-number">1.9.</span> <span class="toc-text"> Network Security</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#chapter-2-application"><span class="toc-number">2.</span> <span class="toc-text"> Chapter 2. Application</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#web-http"><span class="toc-number">2.1.</span> <span class="toc-text"> Web &amp; HTTP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#electronic-mail"><span class="toc-number">2.2.</span> <span class="toc-text"> Electronic Mail</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#domain-name-system-dns"><span class="toc-number">2.3.</span> <span class="toc-text"> Domain Name System (DNS)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#peer-to-peer-p2p-applications"><span class="toc-number">2.4.</span> <span class="toc-text"> Peer-to-Peer (P2P) Applications</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#video-streaming"><span class="toc-number">2.5.</span> <span class="toc-text"> Video Streaming</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content-distribution-networks-cdns"><span class="toc-number">2.6.</span> <span class="toc-text"> Content Distribution Networks (CDNs)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#chapter-3-transport"><span class="toc-number">3.</span> <span class="toc-text"> Chapter 3. Transport</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#socket-programming"><span class="toc-number">3.1.</span> <span class="toc-text"> Socket Programming</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#multiplexing-demultiplexing"><span class="toc-number">3.2.</span> <span class="toc-text"> Multiplexing &amp; Demultiplexing</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#user-datagram-protocol-udp"><span class="toc-number">3.3.</span> <span class="toc-text"> User Datagram Protocol (UDP)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#reliable-data-transfer-rdt"><span class="toc-number">3.4.</span> <span class="toc-text"> Reliable Data Transfer (RDT)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#transmission-control-protocol-tcp"><span class="toc-number">3.5.</span> <span class="toc-text"> Transmission Control Protocol (TCP)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#chapter-4-network"><span class="toc-number">4.</span> <span class="toc-text"> Chapter 4. Network</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#router"><span class="toc-number">4.1.</span> <span class="toc-text"> Router</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#internet-protocol-ip"><span class="toc-number">4.2.</span> <span class="toc-text"> Internet Protocol (IP)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#generalized-forwarding"><span class="toc-number">4.3.</span> <span class="toc-text"> Generalized Forwarding</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#chapter-5-network-control-plane"><span class="toc-number">5.</span> <span class="toc-text"> Chapter 5. Network - Control Plane</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#routing-protocols"><span class="toc-number">5.1.</span> <span class="toc-text"> Routing Protocols</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#intra-as-routing-interior-gateway-protocols-igp"><span class="toc-number">5.2.</span> <span class="toc-text"> Intra-AS Routing: Interior Gateway Protocols (IGP)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#inter-as-routing-border-gateway-protocol-bgp"><span class="toc-number">5.3.</span> <span class="toc-text"> Inter-AS Routing: Border Gateway Protocol (BGP)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#software-defined-networking-sdn"><span class="toc-number">5.4.</span> <span class="toc-text"> Software-Defined Networking (SDN)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#the-internet-control-message-protocol-icmp"><span class="toc-number">5.5.</span> <span class="toc-text"> The Internet Control Message Protocol (ICMP)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#chapter-6-link"><span class="toc-number">6.</span> <span class="toc-text"> Chapter 6. Link</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#error-detection-correction"><span class="toc-number">6.1.</span> <span class="toc-text"> Error Detection &amp; Correction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#multiple-access-protocols"><span class="toc-number">6.2.</span> <span class="toc-text"> Multiple Access Protocols</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#lans"><span class="toc-number">6.3.</span> <span class="toc-text"> LANs</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#chapter-7-wireless-networks"><span class="toc-number">7.</span> <span class="toc-text"> Chapter 7. Wireless Networks</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#code-division-multiple-access-cdma"><span class="toc-number">7.1.</span> <span class="toc-text"> Code Division Multiple Access (CDMA)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ieee-80211-wireless-lan"><span class="toc-number">7.2.</span> <span class="toc-text"> IEEE 802.11 Wireless LAN</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/12/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="计算机网络-学习笔记"><img src="/img/loading.gif" data-original="https://cdn.pixabay.com/photo/2022/04/15/06/32/river-7133713_1280.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="计算机网络-学习笔记"/></a><div class="content"><a class="title" href="/2025/12/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="计算机网络-学习笔记">计算机网络-学习笔记</a><time datetime="2025-12-29T07:06:23.000Z" title="发表于 2025-12-29 15:06:23">2025-12-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/12/27/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="数字逻辑 学习笔记"><img src="/img/loading.gif" data-original="https://cdn.pixabay.com/photo/2022/01/13/21/56/loschwitzer-bridge-6936096_1280.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数字逻辑 学习笔记"/></a><div class="content"><a class="title" href="/2025/12/27/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="数字逻辑 学习笔记">数字逻辑 学习笔记</a><time datetime="2025-12-27T06:25:10.000Z" title="发表于 2025-12-27 14:25:10">2025-12-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/06/14/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="线性代数 学习笔记"><img src="/img/loading.gif" data-original="https://cdn.pixabay.com/photo/2023/02/09/16/36/bridge-7779222_1280.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="线性代数 学习笔记"/></a><div class="content"><a class="title" href="/2025/06/14/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="线性代数 学习笔记">线性代数 学习笔记</a><time datetime="2025-06-14T10:17:33.000Z" title="发表于 2025-06-14 18:17:33">2025-06-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/06/03/%E6%95%B0%E7%90%86%E9%80%BB%E8%BE%91%E5%AF%BC%E8%AE%BA-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="数理逻辑导论 学习笔记"><img src="/img/loading.gif" data-original="https://cdn.pixabay.com/photo/2019/03/12/17/18/trees-4051288_1280.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数理逻辑导论 学习笔记"/></a><div class="content"><a class="title" href="/2025/06/03/%E6%95%B0%E7%90%86%E9%80%BB%E8%BE%91%E5%AF%BC%E8%AE%BA-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="数理逻辑导论 学习笔记">数理逻辑导论 学习笔记</a><time datetime="2025-06-03T07:44:10.000Z" title="发表于 2025-06-03 15:44:10">2025-06-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/01/05/Java-A-%E8%80%83%E5%89%8D%E5%A4%8D%E4%B9%A0/" title="Java A 考前复习"><img src="/img/loading.gif" data-original="https://cdn.pixabay.com/photo/2023/11/07/02/33/wind-power-generation-8370867_1280.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Java A 考前复习"/></a><div class="content"><a class="title" href="/2025/01/05/Java-A-%E8%80%83%E5%89%8D%E5%A4%8D%E4%B9%A0/" title="Java A 考前复习">Java A 考前复习</a><time datetime="2025-01-05T12:39:43.000Z" title="发表于 2025-01-05 20:39:43">2025-01-05</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://cdn.pixabay.com/photo/2022/04/15/06/32/river-7133713_1280.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2025 By lyx1311</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/copy-tex.min.js"></script><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script><script>function addGitalkSource () {
+  const ele = document.createElement('link')
+  ele.rel = 'stylesheet'
+  ele.href= 'https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css'
+  document.getElementsByTagName('head')[0].appendChild(ele)
+}
+
+function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk(Object.assign({
+      clientID: '0e1946cd071da152e9ae',
+      clientSecret: '46e36c0ef403d45a28a862489afbaa8a1ad5b0a5',
+      repo: 'lyx1311.github.io',
+      owner: 'lyx1311',
+      admin: ['lyx1311'],
+      id: '9eed583fede290b9d646d677bbd21071',
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    addGitalkSource()
+    getScript('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js').then(initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Gitalk' === 'Gitalk' || !false) {
+  if (false) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script id="canvas_nest" defer="defer" color="35,180,170" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div>
+        <style>
+            [bg-lazy] {
+                background-image: none !important;
+                background-color: #eee !important;
+            }
+        </style>
+        <script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z\d\-\.\+]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(t.test(e.href)||r.test(e.href))&&(e.href=a.dataset.original)})});</script><script>(r=>{r.imageLazyLoadSetting.processImages=t;var a=r.imageLazyLoadSetting.isSPA,o=r.imageLazyLoadSetting.preloadRatio||1,d=i();function i(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(t){(a||t)&&(d=i());for(var e,n=0;n<d.length;n++)0<=(e=(e=d[n]).getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(r.innerHeight*o||document.documentElement.clientHeight*o)&&(()=>{var t,e,a,o,i=d[n];e=function(){d=d.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).dataset.loaded||(t.hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(a=new Image,o=t.getAttribute("data-original"),a.onload=function(){t.src=o,t.removeAttribute("data-original"),t.setAttribute("data-loaded",!0),e&&e()},a.onerror=function(){t.removeAttribute("data-original"),t.setAttribute("data-loaded",!1),t.src=o},t.src!==o&&(a.src=o)))})()}function e(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",e),r.addEventListener("resize",e),r.addEventListener("orientationchange",e)})(this);</script></body></html>
